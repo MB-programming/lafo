@@ -118,22 +118,22 @@
         /* Header Birds Decoration */
         .header-bird {
             position: absolute;
-            width: 60px;
+            width: 35px;
             height: auto;
-            opacity: 0.4;
+            opacity: 0.3;
             animation: birdFloat 6s ease-in-out infinite;
             pointer-events: none;
             filter: drop-shadow(0 2px 8px rgba(184, 149, 106, 0.3));
         }
 
         .header-bird.left {
-            left: -80px;
+            left: -45px;
             top: 50%;
             transform: translateY(-50%) scaleX(-1);
         }
 
         .header-bird.right {
-            right: -80px;
+            right: -45px;
             top: 50%;
             transform: translateY(-50%);
             animation-delay: 3s;
@@ -261,24 +261,31 @@
             width: 100%;
         }
         
-        .search-icon {
-            width: 48px;
-            height: 48px;
-            display: flex;
+        .contact-button {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
+            gap: 8px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
-            color: #b8956a;
-            font-size: 20px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 50%;
-            background: rgba(184, 149, 106, 0.08);
+            box-shadow: 0 4px 15px rgba(184, 149, 106, 0.3);
+            text-decoration: none;
+            white-space: nowrap;
         }
-        
-        .search-icon:hover {
-            background: rgba(184, 149, 106, 0.15);
-            transform: scale(1.1) rotate(90deg);
-            box-shadow: 0 4px 15px rgba(184, 149, 106, 0.2);
+
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(184, 149, 106, 0.45);
+        }
+
+        .contact-button i {
+            font-size: 18px;
         }
         
         /* Hero Section */
@@ -636,7 +643,7 @@
             margin-bottom: 25px;
             font-weight: 700;
             position: relative;
-            display: inline-block;
+            display: block;
             letter-spacing: -1px;
         }
         
@@ -644,8 +651,9 @@
             content: '';
             position: absolute;
             bottom: -18px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
+            right: 0;
+            margin: 0 auto;
             width: 100px;
             height: 4px;
             background: linear-gradient(90deg, transparent, #b8956a, transparent);
@@ -1450,15 +1458,15 @@
             }
 
             .header-bird {
-                width: 40px;
+                width: 25px;
             }
 
             .header-bird.left {
-                left: -50px;
+                left: -35px;
             }
 
             .header-bird.right {
-                right: -50px;
+                right: -35px;
             }
 
             .section-bird {
@@ -1480,6 +1488,19 @@
 
             .nav-menu {
                 display: none;
+            }
+
+            .contact-button {
+                padding: 10px 18px;
+                font-size: 14px;
+            }
+
+            .contact-button span {
+                display: none;
+            }
+
+            .contact-button i {
+                font-size: 20px;
             }
             
             .hero {
@@ -1546,9 +1567,10 @@
                 <a href="#features" class="nav-link">المميزات</a>
                 <a href="#delivery" class="nav-link">التوصيل</a>
             </nav>
-            <div class="search-icon">
-                <i class="fas fa-search"></i>
-            </div>
+            <a href="https://wa.me/966501234567" class="contact-button" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>تواصل معنا</span>
+            </a>
         </div>
     </header>
 
@@ -1595,7 +1617,7 @@
             </div>
             <div class="hero-image">
                 <div class="product-box">
-                    <img src="https://cdn.pixabay.com/photo/2023/04/05/18/38/chocolate-7902378_1280.png" alt="LA FONCIA شوكولاتة فاخرة">
+                    <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=800&h=800&fit=crop" alt="LA FONCIA شوكولاتة فاخرة">
                 </div>
             </div>
         </div>
@@ -1618,7 +1640,7 @@
             <div class="product-card">
                 <span class="product-badge">الأكثر مبيعاً</span>
                 <div class="product-image-container">
-                    <img src="https://cdn.pixabay.com/photo/2017/07/05/15/41/chocolate-2472858_1280.png" alt="شوكولاتة داكنة بحشوة الكراميل">
+                    <img src="https://images.unsplash.com/photo-1481391243133-f96216dcb5d2?w=600&h=600&fit=crop" alt="شوكولاتة داكنة بحشوة الكراميل">
                 </div>
                 <h3>شوكولاتة داكنة بحشوة الكراميل الذائب</h3>
                 <p>توازن فاخر بين مرارة الشوكولاتة ونعومة الكراميل</p>
@@ -1641,7 +1663,7 @@
             <div class="product-card">
                 <span class="product-badge">جديد</span>
                 <div class="product-image-container">
-                    <img src="https://cdn.pixabay.com/photo/2016/10/23/22/31/bonbons-1764652_1280.png" alt="شوكولاتة بالحشوة التوتية">
+                    <img src="https://images.unsplash.com/photo-1548907040-4baa42d10919?w=600&h=600&fit=crop" alt="شوكولاتة بالحشوة التوتية">
                 </div>
                 <h3>شوكولاتة بالحشوة التوتية</h3>
                 <p>لمسة فاكهية منعشة ترفع التجربة إلى مستوى مختلف</p>
@@ -1664,7 +1686,7 @@
             <div class="product-card">
                 <span class="product-badge">مميز</span>
                 <div class="product-image-container">
-                    <img src="https://cdn.pixabay.com/photo/2020/08/11/19/35/chocolate-5481368_1280.png" alt="شوكولاتة بحشوة الفستق">
+                    <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?w=600&h=600&fit=crop" alt="شوكولاتة بحشوة الفستق">
                 </div>
                 <h3>شوكولاتة بحشوة الفستق الكريمية</h3>
                 <p>غنى في القوام وطعم يدوم</p>
@@ -1797,24 +1819,24 @@
             <div class="delivery-apps">
                 <div class="delivery-app">
                     <div class="delivery-app-icon">
-                        <i class="fas fa-utensils"></i>
+                        <i class="fas fa-box-open"></i>
                     </div>
-                    <h4>The Chefz</h4>
-                    <p>متاح الآن</p>
+                    <h4>طلبات خاصة</h4>
+                    <p>تغليف فاخر مخصص</p>
                 </div>
                 <div class="delivery-app">
                     <div class="delivery-app-icon">
-                        <i class="fas fa-motorcycle"></i>
+                        <i class="fas fa-gifts"></i>
                     </div>
-                    <h4>Jahez</h4>
-                    <p>توصيل سريع</p>
+                    <h4>هدايا المناسبات</h4>
+                    <p>تجهيز احترافي</p>
                 </div>
                 <div class="delivery-app">
                     <div class="delivery-app-icon">
-                        <i class="fas fa-shipping-fast"></i>
+                        <i class="fas fa-truck-fast"></i>
                     </div>
-                    <h4>ToYou</h4>
-                    <p>خدمة مميزة</p>
+                    <h4>توصيل سريع</h4>
+                    <p>لكل مناطق المملكة</p>
                 </div>
             </div>
             <p class="section-description" style="margin-top: 60px; font-size: 20px; display: flex; align-items: center; justify-content: center; gap: 12px;">
@@ -2024,13 +2046,8 @@
         document.querySelectorAll('.delivery-app').forEach(app => {
             app.addEventListener('click', function() {
                 const appName = this.querySelector('h4').textContent;
-                alert(`سيتم فتح تطبيق ${appName} قريباً! 📱`);
+                alert(`سيتم فتح ${appName} قريباً! 📱`);
             });
-        });
-        
-        // Search icon functionality
-        document.querySelector('.search-icon').addEventListener('click', function() {
-            alert('سيتم إضافة وظيفة البحث قريباً! 🔍');
         });
     </script>
 </body>
