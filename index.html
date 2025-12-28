@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA FONCIA - متعة مطلقة في كل قضمة</title>
+    <!-- Font Awesome - مكتبة الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700;800&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #f5ebe0;
+            overflow-x: hidden;
+            color: #6b5844;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Animated Background Particles */
+        .particles-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #b8956a 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float-particle linear infinite;
+        }
+        
+        @keyframes float-particle {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) translateX(50px) rotate(360deg);
+            }
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(254, 253, 248, 0.98);
+            backdrop-filter: blur(15px);
+            padding: 25px 0;
+            box-shadow: 0 2px 20px rgba(107, 88, 68, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: fadeInScale 1s ease 0.3s both;
+        }
+        
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            font-weight: 500;
+            color: #b8956a;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            position: relative;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #b8956a, transparent);
+            animation: expandLine 2s ease 1s forwards;
+        }
+        
+        @keyframes expandLine {
+            to { width: 100%; }
+        }
+        
+        .logo-icon {
+            font-size: 36px;
+            color: #b8956a;
+            display: inline-block;
+            animation: rotateIcon 4s ease-in-out infinite;
+            filter: drop-shadow(0 2px 4px rgba(184, 149, 106, 0.3));
+        }
+        
+        @keyframes rotateIcon {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-15deg) scale(1.1); }
+            75% { transform: rotate(15deg) scale(1.1); }
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: #8b7355;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #b8956a, transparent);
+            transition: width 0.4s ease;
+        }
+        
+        .nav-link:hover {
+            color: #b8956a;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .search-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #b8956a;
+            font-size: 20px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 50%;
+            background: rgba(184, 149, 106, 0.08);
+        }
+        
+        .search-icon:hover {
+            background: rgba(184, 149, 106, 0.15);
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 4px 15px rgba(184, 149, 106, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e8d5c0 0%, #d4c4b0 100%);
+            padding: 120px 40px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(184, 149, 106, 0.12) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(184, 149, 106, 0.12) 2px, transparent 2px);
+            background-size: 60px 60px;
+            opacity: 0.6;
+            animation: moveBackground 30s linear infinite;
+        }
+        
+        @keyframes moveBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 60px 60px; }
+        }
+        
+        /* Floating SVG Decorations */
+        .floating-decoration {
+            position: absolute;
+            opacity: 0.15;
+            animation: floatDecor 20s ease-in-out infinite;
+        }
+        
+        @keyframes floatDecor {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg);
+            }
+            50% { 
+                transform: translateY(-30px) rotate(180deg);
+            }
+        }
+        
+        .decor-1 {
+            top: 10%;
+            left: 8%;
+            width: 80px;
+            animation-delay: 0s;
+        }
+        
+        .decor-2 {
+            top: 60%;
+            right: 10%;
+            width: 100px;
+            animation-delay: 2s;
+            animation-direction: reverse;
+        }
+        
+        .decor-3 {
+            bottom: 15%;
+            left: 15%;
+            width: 70px;
+            animation-delay: 4s;
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text {
+            animation: slideInRight 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, rgba(184, 149, 106, 0.2), rgba(201, 168, 118, 0.15));
+            color: #b8956a;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 28px;
+            border: 1px solid rgba(184, 149, 106, 0.3);
+            animation: pulse 3s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(184, 149, 106, 0.5);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(184, 149, 106, 0);
+            }
+        }
+        
+        .hero-text h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 62px;
+            color: #6b5844;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .hero-text h1 .title-icon {
+            display: inline-block;
+            animation: wiggle 2s ease-in-out infinite;
+            filter: drop-shadow(0 4px 8px rgba(184, 149, 106, 0.4));
+            font-size: 52px;
+            color: #b8956a;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            20% { transform: rotate(-12deg) scale(1.1); }
+            40% { transform: rotate(12deg) scale(1.1); }
+            60% { transform: rotate(-8deg) scale(1.05); }
+            80% { transform: rotate(8deg) scale(1.05); }
+        }
+        
+        .hero-subtitle {
+            font-size: 28px;
+            color: #b8956a;
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero-description {
+            font-size: 17px;
+            line-height: 2;
+            color: #8b7355;
+            margin-bottom: 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 45px;
+            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 12px 30px rgba(184, 149, 106, 0.35);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(184, 149, 106, 0.45);
+        }
+        
+        .cta-button i {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover i {
+            transform: scale(1.2);
+        }
+        
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid #b8956a;
+            color: #b8956a;
+            box-shadow: 0 8px 20px rgba(184, 149, 106, 0.15);
+        }
+        
+        .cta-button.secondary:hover {
+            background: #b8956a;
+            color: white;
+            border-color: #b8956a;
+        }
+        
+        .hero-image {
+            position: relative;
+            animation: slideInLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .product-box {
+            width: 100%;
+            background: white;
+            border-radius: 35px;
+            padding: 40px;
+            box-shadow: 0 30px 80px rgba(107, 88, 68, 0.2);
+            position: relative;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .product-box:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 40px 100px rgba(107, 88, 68, 0.25);
+        }
+        
+        .product-box::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: linear-gradient(45deg, rgba(184, 149, 106, 0.15), transparent, rgba(201, 168, 118, 0.15));
+            border-radius: 40px;
+            z-index: -1;
+            animation: rotateGradient 6s linear infinite;
+        }
+        
+        @keyframes rotateGradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .product-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 35px;
+            background: linear-gradient(135deg, transparent, rgba(255,255,255,0.3), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .product-box:hover::after {
+            opacity: 1;
+            animation: shine 1.5s ease;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+        
+        .product-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 30px;
+            transition: transform 0.6s ease;
+        }
+        
+        .product-box:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Products Section */
+        .products-section {
+            padding: 120px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(184, 149, 106, 0.15), rgba(201, 168, 118, 0.1));
+            color: #b8956a;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            border: 1px solid rgba(184, 149, 106, 0.2);
+            animation: slideDown 1s ease;
+        }
+        
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            color: #6b5844;
+            margin-bottom: 25px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -1px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #b8956a, transparent);
+            border-radius: 2px;
+        }
+        
+        .section-description {
+            font-size: 19px;
+            color: #8b7355;
+            line-height: 1.9;
+            max-width: 850px;
+            margin: 35px auto 0;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 45px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 35px;
+            padding: 45px 40px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(107, 88, 68, 0.12);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #b8956a, #c9a876, #b8956a);
+            background-size: 200% 100%;
+            animation: shimmer 4s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        .product-card:hover {
+            transform: translateY(-20px) scale(1.03);
+            box-shadow: 0 30px 70px rgba(184, 149, 106, 0.25);
+        }
+        
+        .product-image-container {
+            width: 260px;
+            height: 260px;
+            margin: 0 auto 35px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 6px solid #f5ebe0;
+            background: linear-gradient(135deg, #fefdf8 0%, #f5ebe0 100%);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(107, 88, 68, 0.1);
+        }
+        
+        .product-image-container::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            left: -60%;
+            width: 220%;
+            height: 220%;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.7) 50%, transparent 60%);
+            transform: rotate(45deg);
+            animation: shineProduct 5s infinite;
+        }
+        
+        @keyframes shineProduct {
+            0% { transform: rotate(45deg) translateX(-150%); }
+            100% { transform: rotate(45deg) translateX(150%); }
+        }
+        
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .product-card:hover .product-image-container img {
+            transform: scale(1.15) rotate(8deg);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            background: linear-gradient(135deg, #b8956a, #c9a876);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 6px 18px rgba(184, 149, 106, 0.4);
+            animation: pulseBadge 2.5s ease-in-out infinite;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        @keyframes pulseBadge {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 6px 18px rgba(184, 149, 106, 0.4);
+            }
+            50% {
+                transform: scale(1.08);
+                box-shadow: 0 8px 24px rgba(184, 149, 106, 0.6);
+            }
+        }
+        
+        .product-card h3 {
+            font-size: 25px;
+            color: #6b5844;
+            margin-bottom: 18px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        
+        .product-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #8b7355;
+            margin-bottom: 28px;
+        }
+        
+        .product-features {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .feature-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(184, 149, 106, 0.12);
+            color: #b8956a;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid rgba(184, 149, 106, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-tag:hover {
+            background: rgba(184, 149, 106, 0.2);
+            transform: scale(1.05);
+        }
+        
+        .product-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: transparent;
+            border: 2px solid #b8956a;
+            color: #b8956a;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .product-cta:hover {
+            background: #b8956a;
+            color: white;
+            transform: scale(1.08);
+            box-shadow: 0 8px 20px rgba(184, 149, 106, 0.3);
+        }
+        
+        .product-cta i {
+            transition: transform 0.3s ease;
+        }
+        
+        .product-cta:hover i {
+            transform: translateX(-5px);
+        }
+        
+        /* Experience Section */
+        .experience-section {
+            background: linear-gradient(135deg, #e8d5c0 0%, #d4c4b0 100%);
+            padding: 120px 40px;
+        }
+        
+        .experience-grid {
+            max-width: 1400px;
+            margin: 80px auto 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .experience-card {
+            background: white;
+            border-radius: 30px;
+            padding: 50px 45px;
+            box-shadow: 0 15px 40px rgba(107, 88, 68, 0.08);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 0;
+            background: linear-gradient(180deg, #b8956a, #c9a876);
+            transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .experience-card:hover::before {
+            height: 100%;
+        }
+        
+        .experience-card:hover {
+            transform: translateX(12px);
+            box-shadow: 0 20px 50px rgba(184, 149, 106, 0.15);
+        }
+        
+        .experience-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #f5ebe0 0%, #e8d5c0 100%);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            margin-bottom: 28px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 20px rgba(184, 149, 106, 0.15);
+            color: #b8956a;
+        }
+        
+        .experience-card:hover .experience-icon {
+            transform: scale(1.15) rotate(8deg);
+            box-shadow: 0 12px 30px rgba(184, 149, 106, 0.25);
+        }
+        
+        .experience-card h3 {
+            font-size: 27px;
+            color: #6b5844;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+        
+        .experience-card p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #8b7355;
+        }
+        
+        /* Features Section */
+        .features-section {
+            background: white;
+            padding: 120px 40px;
+        }
+        
+        .features-grid {
+            max-width: 1400px;
+            margin: 80px auto 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 45px 30px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #fefdf8 0%, #f5ebe0 100%);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(184, 149, 106, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(184, 149, 106, 0.18);
+        }
+        
+        .feature-icon-wrapper {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            color: white;
+            box-shadow: 0 15px 35px rgba(184, 149, 106, 0.35);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
+        .feature-icon-wrapper::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid rgba(184, 149, 106, 0.4);
+            animation: ripple 2s infinite;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
+        
+        .feature-card:hover .feature-icon-wrapper {
+            transform: scale(1.2) rotate(360deg);
+            box-shadow: 0 20px 45px rgba(184, 149, 106, 0.45);
+        }
+        
+        .feature-card h4 {
+            font-size: 21px;
+            color: #6b5844;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .feature-card p {
+            font-size: 15px;
+            color: #8b7355;
+            line-height: 1.8;
+        }
+        
+        /* Delivery Section */
+        .delivery-section {
+            background: linear-gradient(135deg, #6b5844 0%, #8b7355 100%);
+            padding: 120px 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .delivery-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 35%, rgba(255,255,255,0.08) 2px, transparent 2px),
+                radial-gradient(circle at 75% 65%, rgba(255,255,255,0.08) 2px, transparent 2px);
+            background-size: 70px 70px;
+            animation: moveBackground 40s linear infinite;
+        }
+        
+        .delivery-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .delivery-section .section-title {
+            color: white;
+        }
+        
+        .delivery-section .section-title::after {
+            background: linear-gradient(90deg, transparent, #c9a876, transparent);
+        }
+        
+        .delivery-section .section-description {
+            color: rgba(255,255,255,0.95);
+        }
+        
+        .delivery-apps {
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            margin-top: 70px;
+            flex-wrap: wrap;
+        }
+        
+        .delivery-app {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(20px);
+            padding: 45px 55px;
+            border-radius: 30px;
+            border: 2px solid rgba(255,255,255,0.25);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            min-width: 220px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .delivery-app::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .delivery-app:hover::before {
+            left: 100%;
+        }
+        
+        .delivery-app:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            border-color: rgba(255,255,255,0.4);
+        }
+        
+        .delivery-app-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: rgba(201, 168, 118, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+        
+        .delivery-app:hover .delivery-app-icon {
+            transform: scale(1.15) rotate(360deg);
+            background: rgba(201, 168, 118, 0.5);
+        }
+        
+        .delivery-app-icon i {
+            font-size: 38px;
+            color: #c9a876;
+        }
+        
+        .delivery-app h4 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .delivery-app p {
+            font-size: 15px;
+            opacity: 0.95;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #e8d5c0 0%, #d4c4b0 100%);
+            padding: 120px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-floating-icon {
+            position: absolute;
+            font-size: 120px;
+            opacity: 0.08;
+            animation: floatEmoji 15s ease-in-out infinite;
+            color: #b8956a;
+        }
+        
+        @keyframes floatEmoji {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-40px) rotate(15deg);
+            }
+        }
+        
+        .icon-1 {
+            top: 10%;
+            left: 8%;
+            animation-delay: 0s;
+        }
+        
+        .icon-2 {
+            top: 15%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        
+        .icon-3 {
+            bottom: 12%;
+            left: 12%;
+            animation-delay: 4s;
+        }
+        
+        .icon-4 {
+            bottom: 18%;
+            right: 8%;
+            animation-delay: 6s;
+        }
+        
+        .cta-content {
+            max-width: 950px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            color: #6b5844;
+            margin-bottom: 28px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .cta-content h2 i {
+            color: #b8956a;
+        }
+        
+        .cta-content p {
+            font-size: 24px;
+            color: #8b7355;
+            margin-bottom: 45px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        
+        .cta-buttons-large {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button-large {
+            padding: 24px 60px;
+            font-size: 20px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #6b5844;
+            color: white;
+            padding: 90px 40px 45px;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 70px;
+            margin-bottom: 70px;
+        }
+        
+        .footer-brand h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 34px;
+            letter-spacing: 7px;
+            margin-bottom: 25px;
+        }
+        
+        .footer-brand p {
+            font-size: 15px;
+            line-height: 1.9;
+            opacity: 0.92;
+            margin-bottom: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 18px;
+        }
+        
+        .social-link {
+            width: 52px;
+            height: 52px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background: #b8956a;
+            transform: translateY(-8px) rotate(360deg);
+            box-shadow: 0 10px 25px rgba(184, 149, 106, 0.4);
+        }
+        
+        .footer-section h4 {
+            font-size: 19px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-section ul li a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #c9a876;
+            transform: translateX(8px);
+        }
+        
+        .footer-bottom {
+            padding-top: 35px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            font-size: 14px;
+            opacity: 0.85;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 35px;
+            left: 35px;
+            width: 58px;
+            height: 58px;
+            background: linear-gradient(135deg, #b8956a, #c9a876);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(184, 149, 106, 0.45);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 15px 40px rgba(184, 149, 106, 0.55);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 25px;
+            }
+            
+            .logo {
+                font-size: 22px;
+                letter-spacing: 5px;
+            }
+            
+            .logo-icon {
+                font-size: 28px;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero {
+                padding: 90px 25px 70px;
+            }
+            
+            .hero-text h1 {
+                font-size: 42px;
+            }
+            
+            .hero-subtitle {
+                font-size: 22px;
+            }
+            
+            .section-title {
+                font-size: 38px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .delivery-apps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+            
+            .floating-decoration,
+            .cta-floating-icon {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background Particles -->
+    <div class="particles-bg" id="particlesBg"></div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <i class="fas fa-candy-cane logo-icon"></i>
+                <div class="logo">LA FONCIA</div>
+            </div>
+            <nav class="nav-menu">
+                <a href="#products" class="nav-link">المنتجات</a>
+                <a href="#experience" class="nav-link">التجربة</a>
+                <a href="#features" class="nav-link">المميزات</a>
+                <a href="#delivery" class="nav-link">التوصيل</a>
+            </nav>
+            <div class="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Floating Decorations -->
+        <svg class="floating-decoration decor-1" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" fill="none" stroke="#b8956a" stroke-width="2"/>
+            <path d="M50,20 Q60,40 50,60 Q40,40 50,20" fill="#b8956a" opacity="0.6"/>
+        </svg>
+        <svg class="floating-decoration decor-2" viewBox="0 0 100 100">
+            <path d="M50,10 L60,40 L90,40 L65,60 L75,90 L50,70 L25,90 L35,60 L10,40 L40,40 Z" fill="#b8956a" opacity="0.6"/>
+        </svg>
+        <svg class="floating-decoration decor-3" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="30" fill="none" stroke="#b8956a" stroke-width="3"/>
+            <circle cx="50" cy="50" r="15" fill="#b8956a" opacity="0.6"/>
+        </svg>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fas fa-crown"></i>
+                    الفخامة في كل تفصيلة
+                </div>
+                <h1>
+                    LA FONCIA 
+                    <i class="fas fa-candy-cane title-icon"></i>
+                </h1>
+                <p class="hero-subtitle">متعة مطلقة في كل قضمة</p>
+                <p class="hero-description">
+                    في LA FONCIA، الفخامة ليست وعدًا... بل إحساس يُعاش. نقدم شوكولاتة محشوة بعناية، 
+                    حيث تلتقي القوامات الغنية مع مكس مبتكر من الحشوات، لتخلق تجربة تذوق استثنائية في كل قطعة.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#products" class="cta-button">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>اطلب الآن</span>
+                    </a>
+                    <a href="#experience" class="cta-button secondary">
+                        <i class="fas fa-chevron-down"></i>
+                        <span>اكتشف المزيد</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="product-box">
+                    <img src="https://cdn.pixabay.com/photo/2023/04/05/18/38/chocolate-7902378_1280.png" alt="LA FONCIA شوكولاتة فاخرة">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="section-header">
+            <div class="section-tag">مجموعتنا المميزة</div>
+            <h2 class="section-title">نكهات مختارة بعناية</h2>
+            <p class="section-description">
+                اكتشف تشكيلتنا الفريدة من الشوكولاتة الفاخرة المحشوة بأجود المكونات الطبيعية
+            </p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <span class="product-badge">الأكثر مبيعاً</span>
+                <div class="product-image-container">
+                    <img src="https://cdn.pixabay.com/photo/2017/07/05/15/41/chocolate-2472858_1280.png" alt="شوكولاتة داكنة بحشوة الكراميل">
+                </div>
+                <h3>شوكولاتة داكنة بحشوة الكراميل الذائب</h3>
+                <p>توازن فاخر بين مرارة الشوكولاتة ونعومة الكراميل</p>
+                <div class="product-features">
+                    <span class="feature-tag">
+                        <i class="fas fa-certificate"></i>
+                        شوكولاتة بلجيكية
+                    </span>
+                    <span class="feature-tag">
+                        <i class="fas fa-droplet"></i>
+                        كراميل طبيعي
+                    </span>
+                </div>
+                <button class="product-cta">
+                    اطلب الآن
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <span class="product-badge">جديد</span>
+                <div class="product-image-container">
+                    <img src="https://cdn.pixabay.com/photo/2016/10/23/22/31/bonbons-1764652_1280.png" alt="شوكولاتة بالحشوة التوتية">
+                </div>
+                <h3>شوكولاتة بالحشوة التوتية</h3>
+                <p>لمسة فاكهية منعشة ترفع التجربة إلى مستوى مختلف</p>
+                <div class="product-features">
+                    <span class="feature-tag">
+                        <i class="fas fa-leaf"></i>
+                        توت طبيعي
+                    </span>
+                    <span class="feature-tag">
+                        <i class="fas fa-heart"></i>
+                        نكهة فريدة
+                    </span>
+                </div>
+                <button class="product-cta">
+                    اطلب الآن
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <span class="product-badge">مميز</span>
+                <div class="product-image-container">
+                    <img src="https://cdn.pixabay.com/photo/2020/08/11/19/35/chocolate-5481368_1280.png" alt="شوكولاتة بحشوة الفستق">
+                </div>
+                <h3>شوكولاتة بحشوة الفستق الكريمية</h3>
+                <p>غنى في القوام وطعم يدوم</p>
+                <div class="product-features">
+                    <span class="feature-tag">
+                        <i class="fas fa-seedling"></i>
+                        فستق فاخر
+                    </span>
+                    <span class="feature-tag">
+                        <i class="fas fa-circle-check"></i>
+                        قوام كريمي
+                    </span>
+                </div>
+                <button class="product-cta">
+                    اطلب الآن
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section" id="experience">
+        <div class="section-header">
+            <div class="section-tag">التجربة الفاخرة</div>
+            <h2 class="section-title">تجربة تُرى قبل أن تُتذوَّق</h2>
+            <p class="section-description">
+                بوكسات LA FONCIA ليست مجرد تغليف، بل جزء من التجربة. 
+                تصميم أنيق، تفاصيل ناعمة، ومحتوى يليق بلحظاتك الخاصة.
+            </p>
+        </div>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <div class="experience-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3>تصميم راقي</h3>
+                <p>كل بوكس مصمم بعناية فائقة ليعكس الفخامة والأناقة، مع اهتمام بأدق التفاصيل في الألوان والخطوط والزخارف لتجربة بصرية استثنائية</p>
+            </div>
+            <div class="experience-card">
+                <div class="experience-icon">
+                    <i class="fas fa-sparkles"></i>
+                </div>
+                <h3>تغليف فاخر</h3>
+                <p>نستخدم مواد عالية الجودة في التغليف، مع لمسات نهائية فاخرة تجعل كل بوكس قطعة فنية قابلة للإهداء دون أي تغليف إضافي</p>
+            </div>
+            <div class="experience-card">
+                <div class="experience-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3>جاهز للإهداء</h3>
+                <p>لا حاجة لتغليف إضافي، كل بوكس يصلك جاهزاً للإهداء بشكل مباشر، مع بطاقة تهنئة أنيقة تضفي لمسة شخصية مميزة</p>
+            </div>
+            <div class="experience-card">
+                <div class="experience-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h3>تفاصيل دقيقة</h3>
+                <p>من اختيار الألوان إلى ترتيب القطع داخل البوكس، كل شيء مدروس بعناية لخلق تجربة بصرية وحسية ممتعة تدوم في الذاكرة</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="section-header">
+            <div class="section-tag">لماذا نحن</div>
+            <h2 class="section-title">LA FONCIA؟</h2>
+            <p class="section-description">
+                نقدم لكم تجربة فريدة تجمع بين الجودة والفخامة والابتكار في كل قطعة
+            </p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h4>مكس حشوات في القطعة الواحدة</h4>
+                <p>تجربة فريدة مع مزيج مبتكر من الحشوات في القطعة الواحدة لنكهة متعددة الطبقات ومتنوعة</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h4>مكونات عالية الجودة</h4>
+                <p>نستخدم فقط أفضل المكونات الطبيعية والشوكولاتة البلجيكية الأصلية الفاخرة</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-box-open"></i>
+                </div>
+                <h4>بوكسات جاهزة للإهداء</h4>
+                <p>تغليف فاخر وأنيق يجعل كل بوكس هدية مثالية لأي مناسبة دون الحاجة لتغليف إضافي</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>تجربة فاخرة من أول نظرة حتى آخر قضمة</h4>
+                <p>كل التفاصيل مصممة بعناية لإسعادك وخلق ذكريات جميلة تدوم طويلاً</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Section -->
+    <section class="delivery-section" id="delivery">
+        <div class="delivery-content">
+            <div class="section-header">
+                <div class="section-tag" style="background: rgba(255,255,255,0.2); color: white; border-color: rgba(255,255,255,0.3);">التوصيل السريع</div>
+                <h2 class="section-title">نوصلك بسهولة</h2>
+                <p class="section-description">
+                    نؤمن أن الفخامة يجب أن تكون قريبة. لهذا تتوفر منتجاتنا عبر تطبيقات التوصيل المختارة
+                </p>
+            </div>
+            <div class="delivery-apps">
+                <div class="delivery-app">
+                    <div class="delivery-app-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h4>The Chefz</h4>
+                    <p>متاح الآن</p>
+                </div>
+                <div class="delivery-app">
+                    <div class="delivery-app-icon">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <h4>Jahez</h4>
+                    <p>توصيل سريع</p>
+                </div>
+                <div class="delivery-app">
+                    <div class="delivery-app-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h4>ToYou</h4>
+                    <p>خدمة مميزة</p>
+                </div>
+            </div>
+            <p class="section-description" style="margin-top: 60px; font-size: 20px; display: flex; align-items: center; justify-content: center; gap: 12px;">
+                <i class="fas fa-truck-fast" style="font-size: 28px;"></i>
+                بنقرة واحدة... تصلك تجربة LA FONCIA أينما كنت
+                <i class="fas fa-sparkles" style="font-size: 22px;"></i>
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <i class="fas fa-sparkles cta-floating-icon icon-1"></i>
+        <i class="fas fa-candy-cane cta-floating-icon icon-2"></i>
+        <i class="fas fa-gift cta-floating-icon icon-3"></i>
+        <i class="fas fa-heart cta-floating-icon icon-4"></i>
+        
+        <div class="cta-content">
+            <h2>
+                هل أنت مستعد للتجربة؟ 
+                <i class="fas fa-sparkles"></i>
+            </h2>
+            <p>LA FONCIA حين تتحول الشوكولاتة إلى أسلوب ذوق</p>
+            <div class="cta-buttons-large">
+                <a href="#products" class="cta-button cta-button-large">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>اطلب تجربة LA FONCIA الآن</span>
+                </a>
+                <a href="https://wa.me/966501234567" class="cta-button secondary cta-button-large">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>تواصل معنا</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>LA FONCIA</h3>
+                    <p>
+                        نقدم لكم أفضل أنواع الشوكولاتة البلجيكية الفاخرة المحشوة بعناية. 
+                        كل قطعة هي تحفة فنية تجمع بين الجودة والفخامة والابتكار.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/lafoncia.sa" class="social-link" title="Instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" title="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#experience">التجربة</a></li>
+                        <li><a href="#features">المميزات</a></li>
+                        <li><a href="#delivery">التوصيل</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>خدماتنا</h4>
+                    <ul>
+                        <li><a href="#">طلبات الجملة</a></li>
+                        <li><a href="#">الإهداء المؤسسي</a></li>
+                        <li><a href="#">المناسبات الخاصة</a></li>
+                        <li><a href="#">التوصيل السريع</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>الدعم</h4>
+                    <ul>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">سياسة الاسترجاع</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>
+                    <i class="far fa-copyright"></i> 2024 LA FONCIA - جميع الحقوق محفوظة | 
+                    صُنع بحب في المملكة العربية السعودية 
+                    <i class="fas fa-heart" style="color: #c9a876;"></i>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // تحقق من تحميل مكتبة Font Awesome
+        window.addEventListener('load', function() {
+            const iconTest = document.querySelector('.fa-candy-cane');
+            if (iconTest) {
+                console.log('✅ مكتبة Font Awesome محملة بنجاح!');
+            } else {
+                console.error('❌ خطأ في تحميل مكتبة Font Awesome');
+            }
+        });
+
+        // Create animated particles
+        function createParticles() {
+            const particlesBg = document.getElementById('particlesBg');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.width = (Math.random() * 4 + 4) + 'px';
+                particle.style.height = particle.style.width;
+                particlesBg.appendChild(particle);
+            }
+        }
+        
+        // Initialize particles
+        createParticles();
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 400) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+            
+            // Header shadow on scroll
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 25px rgba(107, 88, 68, 0.12)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(107, 88, 68, 0.08)';
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to cards
+        document.querySelectorAll('.experience-card, .product-card, .feature-card, .delivery-app').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(40px)';
+            el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(el);
+        });
+
+        // Product CTA buttons
+        document.querySelectorAll('.product-cta').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productName = this.parentElement.querySelector('h3').textContent;
+                alert(`سيتم توجيهك لطلب: ${productName}\n\nقريباً! 🛒`);
+            });
+        });
+
+        // Delivery apps click
+        document.querySelectorAll('.delivery-app').forEach(app => {
+            app.addEventListener('click', function() {
+                const appName = this.querySelector('h4').textContent;
+                alert(`سيتم فتح تطبيق ${appName} قريباً! 📱`);
+            });
+        });
+        
+        // Search icon functionality
+        document.querySelector('.search-icon').addEventListener('click', function() {
+            alert('سيتم إضافة وظيفة البحث قريباً! 🔍');
+        });
+    </script>
+</body>
+</html>
