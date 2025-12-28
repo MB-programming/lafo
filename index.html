@@ -66,14 +66,25 @@
         
         /* Header */
         .header {
-            background: rgba(254, 253, 248, 0.98);
-            backdrop-filter: blur(15px);
+            background: rgba(254, 253, 248, 0.95);
+            backdrop-filter: blur(10px);
             padding: 25px 0;
             box-shadow: 0 2px 20px rgba(107, 88, 68, 0.08);
             position: sticky;
             top: 0;
             z-index: 1000;
             animation: slideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: visible;
+        }
+
+        /* Glass effect on scroll */
+        .header.scrolled {
+            background: rgba(254, 253, 248, 0.75);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            box-shadow: 0 8px 32px rgba(107, 88, 68, 0.12);
+            border-bottom: 1px solid rgba(184, 149, 106, 0.1);
         }
         
         @keyframes slideDown {
@@ -101,6 +112,54 @@
             align-items: center;
             gap: 15px;
             animation: fadeInScale 1s ease 0.3s both;
+            position: relative;
+        }
+
+        /* Header Birds Decoration */
+        .header-bird {
+            position: absolute;
+            width: 60px;
+            height: auto;
+            opacity: 0.4;
+            animation: birdFloat 6s ease-in-out infinite;
+            pointer-events: none;
+            filter: drop-shadow(0 2px 8px rgba(184, 149, 106, 0.3));
+        }
+
+        .header-bird.left {
+            left: -80px;
+            top: 50%;
+            transform: translateY(-50%) scaleX(-1);
+        }
+
+        .header-bird.right {
+            right: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+            animation-delay: 3s;
+        }
+
+        @keyframes birdFloat {
+            0%, 100% {
+                transform: translateY(-50%) translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-55%) translateX(5px) rotate(3deg);
+            }
+            50% {
+                transform: translateY(-60%) translateX(10px) rotate(0deg);
+            }
+            75% {
+                transform: translateY(-55%) translateX(5px) rotate(-3deg);
+            }
+        }
+
+        .header-bird.left {
+            transform-origin: center;
+        }
+
+        .header-bird.right {
+            transform-origin: center;
         }
         
         @keyframes fadeInScale {
@@ -114,6 +173,18 @@
             }
         }
         
+        .logo-image {
+            height: 65px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(184, 149, 106, 0.2));
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+
         .logo {
             font-family: 'Cinzel', serif;
             font-size: 28px;
@@ -123,7 +194,7 @@
             text-transform: uppercase;
             position: relative;
         }
-        
+
         .logo::after {
             content: '';
             position: absolute;
@@ -134,11 +205,11 @@
             background: linear-gradient(90deg, #b8956a, transparent);
             animation: expandLine 2s ease 1s forwards;
         }
-        
+
         @keyframes expandLine {
             to { width: 100%; }
         }
-        
+
         .logo-icon {
             font-size: 36px;
             color: #b8956a;
@@ -146,7 +217,7 @@
             animation: rotateIcon 4s ease-in-out infinite;
             filter: drop-shadow(0 2px 4px rgba(184, 149, 106, 0.3));
         }
-        
+
         @keyframes rotateIcon {
             0%, 100% { transform: rotate(0deg) scale(1); }
             25% { transform: rotate(-15deg) scale(1.1); }
@@ -1254,6 +1325,65 @@
             opacity: 0.85;
         }
         
+        /* Decorative Separator */
+        .section-separator {
+            width: 200px;
+            height: auto;
+            margin: 40px auto;
+            display: block;
+            opacity: 0.6;
+            filter: drop-shadow(0 2px 6px rgba(184, 149, 106, 0.2));
+        }
+
+        /* Floating Birds in Sections */
+        .section-bird {
+            position: absolute;
+            width: 80px;
+            height: auto;
+            opacity: 0.15;
+            animation: sectionBirdFloat 8s ease-in-out infinite;
+            pointer-events: none;
+            filter: drop-shadow(0 2px 8px rgba(184, 149, 106, 0.3));
+        }
+
+        @keyframes sectionBirdFloat {
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px) rotate(5deg);
+            }
+            50% {
+                transform: translateY(-10px) translateX(-10px) rotate(-5deg);
+            }
+            75% {
+                transform: translateY(-25px) translateX(5px) rotate(3deg);
+            }
+        }
+
+        .section-bird.top-left {
+            top: 50px;
+            left: 50px;
+        }
+
+        .section-bird.top-right {
+            top: 50px;
+            right: 50px;
+            animation-delay: 2s;
+        }
+
+        .section-bird.bottom-left {
+            bottom: 50px;
+            left: 50px;
+            animation-delay: 4s;
+        }
+
+        .section-bird.bottom-right {
+            bottom: 50px;
+            right: 50px;
+            animation-delay: 6s;
+        }
+
         /* Scroll to Top Button */
         .scroll-top {
             position: fixed;
@@ -1314,16 +1444,40 @@
             .header-content {
                 padding: 0 25px;
             }
-            
+
+            .logo-image {
+                height: 50px;
+            }
+
+            .header-bird {
+                width: 40px;
+            }
+
+            .header-bird.left {
+                left: -50px;
+            }
+
+            .header-bird.right {
+                right: -50px;
+            }
+
+            .section-bird {
+                width: 50px;
+            }
+
+            .section-separator {
+                width: 150px;
+            }
+
             .logo {
                 font-size: 22px;
                 letter-spacing: 5px;
             }
-            
+
             .logo-icon {
                 font-size: 28px;
             }
-            
+
             .nav-menu {
                 display: none;
             }
@@ -1379,11 +1533,12 @@
     </div>
 
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="mainHeader">
         <div class="header-content">
             <div class="logo-container">
-                <i class="fas fa-candy-cane logo-icon"></i>
-                <div class="logo">LA FONCIA</div>
+                <img src="single-bird.webp" alt="bird" class="header-bird left" loading="lazy">
+                <img src="logo.webp" alt="LA FONCIA Logo" class="logo-image">
+                <img src="single-bird.webp" alt="bird" class="header-bird right" loading="lazy">
             </div>
             <nav class="nav-menu">
                 <a href="#products" class="nav-link">المنتجات</a>
@@ -1447,10 +1602,14 @@
     </section>
 
     <!-- Products Section -->
-    <section class="products-section" id="products">
+    <section class="products-section" id="products" style="position: relative; overflow: hidden;">
+        <img src="birds.webp" alt="decorative birds" class="section-bird top-left" loading="lazy">
+        <img src="birds.webp" alt="decorative birds" class="section-bird top-right" loading="lazy">
+
         <div class="section-header">
             <div class="section-tag">مجموعتنا المميزة</div>
             <h2 class="section-title">نكهات مختارة بعناية</h2>
+            <img src="sepreator.webp" alt="separator" class="section-separator" loading="lazy">
             <p class="section-description">
                 اكتشف تشكيلتنا الفريدة من الشوكولاتة الفاخرة المحشوة بأجود المكونات الطبيعية
             </p>
@@ -1528,12 +1687,16 @@
     </section>
 
     <!-- Experience Section -->
-    <section class="experience-section" id="experience">
+    <section class="experience-section" id="experience" style="position: relative; overflow: hidden;">
+        <img src="single-bird.webp" alt="decorative bird" class="section-bird bottom-left" loading="lazy">
+        <img src="single-bird.webp" alt="decorative bird" class="section-bird bottom-right" loading="lazy">
+
         <div class="section-header">
             <div class="section-tag">التجربة الفاخرة</div>
             <h2 class="section-title">تجربة تُرى قبل أن تُتذوَّق</h2>
+            <img src="sepreator.webp" alt="separator" class="section-separator" loading="lazy">
             <p class="section-description">
-                بوكسات LA FONCIA ليست مجرد تغليف، بل جزء من التجربة. 
+                بوكسات LA FONCIA ليست مجرد تغليف، بل جزء من التجربة.
                 تصميم أنيق، تفاصيل ناعمة، ومحتوى يليق بلحظاتك الخاصة.
             </p>
         </div>
@@ -1570,10 +1733,14 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features-section" id="features">
+    <section class="features-section" id="features" style="position: relative; overflow: hidden;">
+        <img src="birds.webp" alt="decorative birds" class="section-bird top-left" loading="lazy">
+        <img src="birds.webp" alt="decorative birds" class="section-bird bottom-right" loading="lazy">
+
         <div class="section-header">
             <div class="section-tag">لماذا نحن</div>
             <h2 class="section-title">LA FONCIA؟</h2>
+            <img src="sepreator.webp" alt="separator" class="section-separator" loading="lazy">
             <p class="section-description">
                 نقدم لكم تجربة فريدة تجمع بين الجودة والفخامة والابتكار في كل قطعة
             </p>
@@ -1614,11 +1781,15 @@
     </section>
 
     <!-- Delivery Section -->
-    <section class="delivery-section" id="delivery">
+    <section class="delivery-section" id="delivery" style="position: relative; overflow: hidden;">
+        <img src="single-bird.webp" alt="decorative bird" class="section-bird top-left" loading="lazy" style="opacity: 0.1; filter: brightness(2);">
+        <img src="single-bird.webp" alt="decorative bird" class="section-bird top-right" loading="lazy" style="opacity: 0.1; filter: brightness(2);">
+
         <div class="delivery-content">
             <div class="section-header">
                 <div class="section-tag" style="background: rgba(255,255,255,0.2); color: white; border-color: rgba(255,255,255,0.3);">التوصيل السريع</div>
                 <h2 class="section-title">نوصلك بسهولة</h2>
+                <img src="sepreator.webp" alt="separator" class="section-separator" loading="lazy" style="opacity: 0.8; filter: brightness(1.5);">
                 <p class="section-description">
                     نؤمن أن الفخامة يجب أن تكون قريبة. لهذا تتوفر منتجاتنا عبر تطبيقات التوصيل المختارة
                 </p>
@@ -1801,13 +1972,13 @@
             } else {
                 scrollTopBtn.classList.remove('active');
             }
-            
-            // Header shadow on scroll
-            const header = document.querySelector('.header');
+
+            // Header glass effect on scroll
+            const header = document.getElementById('mainHeader');
             if (window.scrollY > 50) {
-                header.style.boxShadow = '0 4px 25px rgba(107, 88, 68, 0.12)';
+                header.classList.add('scrolled');
             } else {
-                header.style.boxShadow = '0 2px 20px rgba(107, 88, 68, 0.08)';
+                header.classList.remove('scrolled');
             }
         });
         
