@@ -7,7 +7,7 @@
     <!-- Font Awesome - مكتبة الأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700;800&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700&family=Bellefair&family=Forum&family=Cormorant:wght@300;400;500;600;700&display=swap');
         
         * {
             margin: 0;
@@ -16,7 +16,8 @@
         }
         
         body {
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 300;
             background: #f5ebe0;
             overflow-x: hidden;
             color: #6b5844;
@@ -186,11 +187,11 @@
         }
 
         .logo {
-            font-family: 'Cinzel', serif;
+            font-family: 'Forum', serif;
             font-size: 28px;
-            font-weight: 500;
+            font-weight: 400;
             color: #b8956a;
-            letter-spacing: 8px;
+            letter-spacing: 10px;
             text-transform: uppercase;
             position: relative;
         }
@@ -234,10 +235,11 @@
             color: #8b7355;
             text-decoration: none;
             font-size: 16px;
-            font-weight: 500;
+            font-weight: 400;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             padding: 5px 0;
+            letter-spacing: 0.5px;
         }
         
         .nav-link::after {
@@ -271,12 +273,13 @@
             border: none;
             border-radius: 50px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 400;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 15px rgba(184, 149, 106, 0.3);
             text-decoration: none;
             white-space: nowrap;
+            letter-spacing: 0.5px;
         }
 
         .contact-button:hover {
@@ -389,11 +392,12 @@
             padding: 10px 24px;
             border-radius: 50px;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 400;
             margin-bottom: 28px;
             border: 1px solid rgba(184, 149, 106, 0.3);
             animation: pulse 3s ease-in-out infinite;
             backdrop-filter: blur(10px);
+            letter-spacing: 0.5px;
         }
         
         @keyframes pulse {
@@ -408,13 +412,13 @@
         }
         
         .hero-text h1 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Cormorant', serif;
             font-size: 62px;
             color: #6b5844;
             margin-bottom: 20px;
             line-height: 1.2;
-            font-weight: 700;
-            letter-spacing: -1px;
+            font-weight: 400;
+            letter-spacing: 2px;
             display: flex;
             align-items: center;
             gap: 15px;
@@ -440,8 +444,8 @@
             font-size: 28px;
             color: #b8956a;
             margin-bottom: 25px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
+            font-weight: 400;
+            letter-spacing: 1px;
         }
         
         .hero-description {
@@ -467,13 +471,14 @@
             border: none;
             border-radius: 50px;
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 400;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 12px 30px rgba(184, 149, 106, 0.35);
             text-decoration: none;
             position: relative;
             overflow: hidden;
+            letter-spacing: 0.5px;
         }
         
         .cta-button::before {
@@ -629,22 +634,22 @@
             padding: 10px 30px;
             border-radius: 50px;
             font-size: 15px;
-            font-weight: 700;
+            font-weight: 400;
             margin-bottom: 15px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             border: 1px solid rgba(184, 149, 106, 0.2);
             animation: slideDown 1s ease;
         }
         
         .section-title {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Cormorant', serif;
             font-size: 52px;
             color: #6b5844;
             margin-bottom: 25px;
-            font-weight: 700;
+            font-weight: 400;
             position: relative;
             display: block;
-            letter-spacing: -1px;
+            letter-spacing: 2px;
         }
         
         .section-title::after {
@@ -756,11 +761,11 @@
             padding: 10px 22px;
             border-radius: 50px;
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 400;
             box-shadow: 0 6px 18px rgba(184, 149, 106, 0.4);
             animation: pulseBadge 2.5s ease-in-out infinite;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
         
         @keyframes pulseBadge {
@@ -778,8 +783,9 @@
             font-size: 25px;
             color: #6b5844;
             margin-bottom: 18px;
-            font-weight: 700;
+            font-weight: 400;
             line-height: 1.4;
+            letter-spacing: 0.5px;
         }
         
         .product-card p {
@@ -806,9 +812,10 @@
             padding: 8px 18px;
             border-radius: 25px;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 400;
             border: 1px solid rgba(184, 149, 106, 0.2);
             transition: all 0.3s ease;
+            letter-spacing: 0.3px;
         }
         
         .feature-tag:hover {
@@ -826,9 +833,10 @@
             color: #b8956a;
             border-radius: 50px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 400;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 0.5px;
         }
         
         .product-cta:hover {
@@ -915,7 +923,8 @@
             font-size: 27px;
             color: #6b5844;
             margin-bottom: 18px;
-            font-weight: 700;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
         
         .experience-card p {
@@ -1015,7 +1024,8 @@
             font-size: 21px;
             color: #6b5844;
             margin-bottom: 15px;
-            font-weight: 700;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
         
         .feature-card p {
@@ -1134,8 +1144,9 @@
         
         .delivery-app h4 {
             font-size: 24px;
-            font-weight: 700;
+            font-weight: 400;
             margin-bottom: 10px;
+            letter-spacing: 0.5px;
         }
         
         .delivery-app p {
@@ -1201,12 +1212,12 @@
         }
         
         .cta-content h2 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Cormorant', serif;
             font-size: 56px;
             color: #6b5844;
             margin-bottom: 28px;
-            font-weight: 700;
-            letter-spacing: -1px;
+            font-weight: 400;
+            letter-spacing: 1px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1222,7 +1233,8 @@
             color: #8b7355;
             margin-bottom: 45px;
             line-height: 1.6;
-            font-weight: 500;
+            font-weight: 300;
+            letter-spacing: 0.3px;
         }
         
         .cta-buttons-large {
@@ -1257,10 +1269,11 @@
         }
         
         .footer-brand h3 {
-            font-family: 'Cinzel', serif;
+            font-family: 'Forum', serif;
             font-size: 34px;
-            letter-spacing: 7px;
+            letter-spacing: 10px;
             margin-bottom: 25px;
+            font-weight: 400;
         }
         
         .footer-brand p {
@@ -1298,7 +1311,8 @@
         .footer-section h4 {
             font-size: 19px;
             margin-bottom: 25px;
-            font-weight: 700;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
         
         .footer-section ul {
