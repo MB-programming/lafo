@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA FONCIA - شوكولاتة فاخرة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&family=Forum&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #fefdf8;
+            color: #6b5844;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Header */
+        .header {
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .logo {
+            width: 180px;
+            height: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 30px;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'Forum', serif;
+            font-size: 56px;
+            color: #b8956a;
+            margin-bottom: 20px;
+            letter-spacing: 8px;
+            font-weight: 400;
+        }
+
+        .tagline {
+            font-size: 24px;
+            color: #8b7355;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .product-image {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin: 50px auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(107, 88, 68, 0.15);
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(184, 149, 106, 0.3);
+            text-decoration: none;
+            margin-top: 30px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(184, 149, 106, 0.45);
+        }
+
+        /* Simple Features */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 80px;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature i {
+            font-size: 40px;
+            color: #b8956a;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            font-size: 18px;
+            color: #6b5844;
+            font-weight: 400;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 50px 30px;
+            color: #8b7355;
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(184, 149, 106, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b8956a;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: #b8956a;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+                letter-spacing: 4px;
+            }
+
+            .tagline {
+                font-size: 18px;
+            }
+
+            .product-image {
+                max-width: 300px;
+            }
+
+            .features {
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <img src="logo.webp" alt="LA FONCIA" class="logo">
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>LA FONCIA</h1>
+                <p class="tagline">متعة مطلقة في كل قضمة</p>
+
+                <img src="in-banner-Photoroom.png" alt="LA FONCIA Chocolates" class="product-image">
+
+                <p style="font-size: 18px; color: #8b7355; margin-bottom: 20px;">
+                    شوكولاتة بلجيكية فاخرة بحشوات مزدوجة
+                </p>
+
+                <a href="https://wa.me/966501234567" class="cta-button">
+                    <i class="fab fa-whatsapp"></i>
+                    اطلب الآن
+                </a>
+
+                <!-- Simple Features -->
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-gem"></i>
+                        <h3>جودة فاخرة</h3>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>حشوة مزدوجة</h3>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-gift"></i>
+                        <h3>جاهز للإهداء</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/lafoncia.sa" class="social-link" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="#" class="social-link">
+                <i class="fab fa-snapchat"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 LA FONCIA - جميع الحقوق محفوظة</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA FONCIA - شوكولاتة فاخرة بالطريقة الكلاسيكية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lora:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Amiri', serif;
+            background: #f8f5f0;
+            color: #3d2e1f;
+            line-height: 1.8;
+        }
+
+        /* Classic Header */
+        .header {
+            background: #6b5844;
+            padding: 20px 0;
+            border-bottom: 3px solid #b8956a;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-classic {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-classic img {
+            height: 70px;
+            filter: brightness(1.2);
+        }
+
+        .logo-text {
+            font-family: 'Lora', serif;
+            font-size: 32px;
+            color: #b8956a;
+            letter-spacing: 8px;
+            font-weight: 700;
+        }
+
+        .nav-classic {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-classic a {
+            color: #f5ebe0;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-classic a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #b8956a;
+            transition: width 0.3s ease;
+        }
+
+        .nav-classic a:hover {
+            color: #b8956a;
+        }
+
+        .nav-classic a:hover::after {
+            width: 100%;
+        }
+
+        /* Classic Banner */
+        .classic-banner {
+            background: linear-gradient(rgba(107, 88, 68, 0.7), rgba(107, 88, 68, 0.7)),
+                        url('Gemini_Generated_Image_pubmgnpubmgnpubm.png');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 40px;
+            text-align: center;
+            border-bottom: 5px double #b8956a;
+        }
+
+        .banner-ornament {
+            font-size: 40px;
+            color: #b8956a;
+            margin-bottom: 20px;
+        }
+
+        .classic-banner h1 {
+            font-family: 'Lora', serif;
+            font-size: 72px;
+            color: #f5ebe0;
+            margin-bottom: 20px;
+            letter-spacing: 12px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+        }
+
+        .classic-banner .subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 32px;
+            color: #e8d5c0;
+            margin-bottom: 30px;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .classic-banner .description {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 20px;
+            color: #f5ebe0;
+            line-height: 2;
+        }
+
+        .divider {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(to left, transparent, #b8956a, transparent);
+            margin: 30px auto;
+        }
+
+        /* Classic Section */
+        .classic-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Lora', serif;
+            font-size: 48px;
+            color: #6b5844;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-header .ornament {
+            font-size: 30px;
+            color: #b8956a;
+            margin: 20px 0;
+        }
+
+        .section-header p {
+            font-size: 20px;
+            color: #8b7355;
+            line-height: 1.8;
+        }
+
+        /* About Section with Ornate Border */
+        .about-classic {
+            background: white;
+            border: 3px double #b8956a;
+            padding: 60px;
+            margin: 80px 0;
+            position: relative;
+        }
+
+        .about-classic::before,
+        .about-classic::after {
+            content: '❖';
+            position: absolute;
+            font-size: 30px;
+            color: #b8956a;
+        }
+
+        .about-classic::before {
+            top: -15px;
+            right: 50%;
+            transform: translateX(50%);
+            background: #f8f5f0;
+            padding: 0 15px;
+        }
+
+        .about-classic::after {
+            bottom: -15px;
+            right: 50%;
+            transform: translateX(50%);
+            background: #f8f5f0;
+            padding: 0 15px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: 'Lora', serif;
+            font-size: 36px;
+            color: #6b5844;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            font-size: 19px;
+            color: #5d4a3a;
+            margin-bottom: 20px;
+            line-height: 2;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border: 5px solid #e8d5c0;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(107, 88, 68, 0.2);
+        }
+
+        /* Products Grid Classic */
+        .products-classic {
+            background: #fefdf8;
+            padding: 80px 0;
+        }
+
+        .products-grid-classic {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        .product-classic {
+            background: white;
+            border: 2px solid #e8d5c0;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .product-classic::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border: 2px solid #b8956a;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .product-classic:hover::before {
+            opacity: 1;
+        }
+
+        .product-classic:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(107, 88, 68, 0.15);
+        }
+
+        .product-classic img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border: 3px solid #e8d5c0;
+            margin-bottom: 25px;
+        }
+
+        .product-classic h4 {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            color: #6b5844;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .product-classic p {
+            font-size: 17px;
+            color: #8b7355;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* Classic Button */
+        .btn-classic {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #6b5844;
+            color: #f5ebe0;
+            border: 2px solid #b8956a;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Amiri', serif;
+            font-weight: 700;
+        }
+
+        .btn-classic:hover {
+            background: #b8956a;
+            color: white;
+            box-shadow: 0 5px 15px rgba(184, 149, 106, 0.4);
+        }
+
+        /* Features Classic */
+        .features-classic {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .features-grid-classic {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-classic {
+            text-align: center;
+            padding: 40px 20px;
+            border: 1px solid #e8d5c0;
+            background: #fefdf8;
+            transition: all 0.3s ease;
+        }
+
+        .feature-classic:hover {
+            border-color: #b8956a;
+            background: white;
+        }
+
+        .feature-classic i {
+            font-size: 50px;
+            color: #b8956a;
+            margin-bottom: 20px;
+        }
+
+        .feature-classic h5 {
+            font-family: 'Lora', serif;
+            font-size: 20px;
+            color: #6b5844;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .feature-classic p {
+            font-size: 16px;
+            color: #8b7355;
+            line-height: 1.7;
+        }
+
+        /* Testimonial Classic */
+        .testimonial-classic {
+            background: #6b5844;
+            padding: 80px 40px;
+            color: #f5ebe0;
+            border-top: 5px double #b8956a;
+            border-bottom: 5px double #b8956a;
+        }
+
+        .testimonial-box {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px;
+            background: rgba(245, 235, 224, 0.05);
+            border: 2px solid rgba(184, 149, 106, 0.3);
+            position: relative;
+        }
+
+        .testimonial-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            right: 50%;
+            transform: translateX(50%);
+            font-size: 120px;
+            color: #b8956a;
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        .testimonial-box p {
+            font-size: 24px;
+            line-height: 2;
+            margin-bottom: 30px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-size: 18px;
+            color: #b8956a;
+            font-weight: 700;
+        }
+
+        /* Contact Classic */
+        .contact-classic {
+            background: #fefdf8;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item i {
+            font-size: 40px;
+            color: #b8956a;
+            margin-bottom: 15px;
+        }
+
+        .contact-item h4 {
+            font-family: 'Lora', serif;
+            font-size: 20px;
+            color: #6b5844;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            font-size: 18px;
+            color: #8b7355;
+        }
+
+        /* Footer Classic */
+        .footer-classic {
+            background: #3d2e1f;
+            color: #d4c4b0;
+            padding: 60px 40px 30px;
+            border-top: 3px solid #b8956a;
+        }
+
+        .footer-content-classic {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Lora', serif;
+            font-size: 42px;
+            color: #b8956a;
+            margin-bottom: 20px;
+            letter-spacing: 10px;
+            font-weight: 700;
+        }
+
+        .footer-text {
+            font-size: 18px;
+            line-height: 1.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .social-classic {
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border: 2px solid #b8956a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b8956a;
+            font-size: 22px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-classic:hover {
+            background: #b8956a;
+            color: #3d2e1f;
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(184, 149, 106, 0.3);
+            font-size: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid-classic {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid-classic {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-classic {
+                display: none;
+            }
+
+            .classic-banner h1 {
+                font-size: 42px;
+                letter-spacing: 6px;
+            }
+
+            .classic-banner .subtitle {
+                font-size: 24px;
+            }
+
+            .products-grid-classic,
+            .features-grid-classic {
+                grid-template-columns: 1fr;
+            }
+
+            .about-classic {
+                padding: 30px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Classic Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-classic">
+                <img src="logo.webp" alt="LA FONCIA">
+            </div>
+            <nav class="nav-classic">
+                <a href="#about">عن المنتج</a>
+                <a href="#products">المنتجات</a>
+                <a href="#features">المميزات</a>
+                <a href="#contact">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Classic Banner -->
+    <section class="classic-banner">
+        <div class="banner-ornament">❖</div>
+        <h1>LA FONCIA</h1>
+        <p class="subtitle">حيث تلتقي الأصالة بالفخامة</p>
+        <div class="divider"></div>
+        <p class="description">
+            منذ اللحظة الأولى، نقدم لكم تجربة شوكولاتة استثنائية تجمع بين الجودة العالمية
+            والنكهات الأصيلة. كل قطعة هي رحلة من المتعة والفخامة.
+        </p>
+        <a href="#products" class="btn-classic">اكتشف المجموعة</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-classic" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h3>قصة التميز</h3>
+                <p>
+                    LA FONCIA ليست مجرد شوكولاتة، بل هي فلسفة في صناعة السعادة.
+                    نختار أجود أنواع الشوكولاتة البلجيكية الفاخرة ونمزجها بحشوات طبيعية مبتكرة.
+                </p>
+                <p>
+                    كل قطعة تحمل حشوتين مختلفتين، تجربة فريدة تأخذك في رحلة من النكهات المتناغمة.
+                    من الكراميل الذائب إلى التوت الطبيعي والفستق الكريمي، كل قضمة هي تحفة فنية.
+                </p>
+                <p>
+                    نؤمن بأن الفخامة تكمن في التفاصيل، لذا نهتم بكل عنصر من التغليف إلى آخر قضمة.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="in-banner-Photoroom.png" alt="LA FONCIA Premium Box">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-classic" id="products">
+        <div class="classic-section">
+            <div class="section-header">
+                <h2>مجموعتنا الفاخرة</h2>
+                <div class="ornament">✦ ✦ ✦</div>
+                <p>تشكيلة مختارة بعناية من أجود أنواع الشوكولاتة المحشوة</p>
+            </div>
+
+            <div class="products-grid-classic">
+                <div class="product-classic">
+                    <img src="image-choc-3.webp" alt="كراميل ذائب">
+                    <h4>الكراميل الفاخر</h4>
+                    <p>
+                        شوكولاتة داكنة فاخرة بحشوة الكراميل الطبيعي الذائب،
+                        توازن مثالي بين الحلاوة والمرارة
+                    </p>
+                    <a href="#contact" class="btn-classic">اطلب الآن</a>
+                </div>
+
+                <div class="product-classic">
+                    <img src="image-choco.webp" alt="توت طبيعي">
+                    <h4>التوت الملكي</h4>
+                    <p>
+                        شوكولاتة بلجيكية ممتازة مع حشوة التوت الطبيعي الطازج،
+                        نكهة منعشة تأسر الحواس
+                    </p>
+                    <a href="#contact" class="btn-classic">اطلب الآن</a>
+                </div>
+
+                <div class="product-classic">
+                    <img src="image-five.webp" alt="فستق كريمي">
+                    <h4>الفستق الذهبي</h4>
+                    <p>
+                        فستق فاخر محمص بقوام كريمي يمتزج مع الشوكولاتة الفاخرة،
+                        تجربة غنية لا تُنسى
+                    </p>
+                    <a href="#contact" class="btn-classic">اطلب الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-classic" id="features">
+        <div class="classic-section">
+            <div class="section-header">
+                <h2>لماذا LA FONCIA؟</h2>
+                <div class="ornament">❖ ❖ ❖</div>
+                <p>نقدم لكم الأفضل في كل جانب</p>
+            </div>
+
+            <div class="features-grid-classic">
+                <div class="feature-classic">
+                    <i class="fas fa-certificate"></i>
+                    <h5>جودة عالمية</h5>
+                    <p>شوكولاتة بلجيكية أصلية ١٠٠٪ من أفضل المصانع العالمية</p>
+                </div>
+
+                <div class="feature-classic">
+                    <i class="fas fa-layer-group"></i>
+                    <h5>حشوة مزدوجة</h5>
+                    <p>مزيج فريد من حشوتين في القطعة الواحدة لتجربة استثنائية</p>
+                </div>
+
+                <div class="feature-classic">
+                    <i class="fas fa-leaf"></i>
+                    <h5>مكونات طبيعية</h5>
+                    <p>نستخدم فقط المكونات الطبيعية عالية الجودة</p>
+                </div>
+
+                <div class="feature-classic">
+                    <i class="fas fa-gift"></i>
+                    <h5>تغليف فاخر</h5>
+                    <p>بوكسات أنيقة جاهزة للإهداء بتصميم راقي</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-classic">
+        <div class="classic-section">
+            <div class="section-header" style="color: #f5ebe0;">
+                <h2 style="color: #b8956a;">شهادات العملاء</h2>
+                <div class="ornament">✦ ✦ ✦</div>
+            </div>
+
+            <div class="testimonial-box">
+                <p>
+                    تجربة رائعة بكل المقاييس! الشوكولاتة فاخرة والحشوات طبيعية ولذيذة.
+                    البوكس أنيق جداً واستخدمته كهدية في مناسبة خاصة وكان الجميع معجبين.
+                    LA FONCIA تستحق كل التقدير والثناء.
+                </p>
+                <p class="testimonial-author">— عبدالله الشهري، الرياض</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-classic" id="contact">
+        <div class="classic-section">
+            <div class="section-header">
+                <h2>تواصل معنا</h2>
+                <div class="ornament">✦ ✦ ✦</div>
+                <p>نحن هنا لخدمتكم والإجابة على استفساراتكم</p>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <h4>واتساب</h4>
+                    <p>+966 50 123 4567</p>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <h4>إنستقرام</h4>
+                    <p>@lafoncia.sa</p>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4>البريد الإلكتروني</h4>
+                    <p>info@lafoncia.sa</p>
+                </div>
+            </div>
+
+            <a href="https://wa.me/966501234567" class="btn-classic" style="padding: 18px 50px; font-size: 20px;">
+                اطلب LA FONCIA الآن
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-classic">
+        <div class="footer-content-classic">
+            <h3 class="footer-logo">LA FONCIA</h3>
+            <div class="divider"></div>
+            <p class="footer-text">
+                شوكولاتة بلجيكية فاخرة بحشوات طبيعية مبتكرة. نقدم لكم تجربة استثنائية
+                تجمع بين الجودة والفخامة والذوق الرفيع. كل قطعة هي تحفة فنية صُنعت بحب وعناية.
+            </p>
+
+            <div class="footer-social">
+                <a href="https://www.instagram.com/lafoncia.sa" class="social-classic" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-classic">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-classic">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="#" class="social-classic">
+                    <i class="fab fa-snapchat"></i>
+                </a>
+                <a href="https://wa.me/966501234567" class="social-classic">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© ٢٠٢٤ LA FONCIA - جميع الحقوق محفوظة | صُنع بعناية في المملكة العربية السعودية</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
