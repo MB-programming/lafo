@@ -7,7 +7,7 @@
     <!-- Font Awesome - مكتبة الأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700;800&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700&family=Bellefair&family=Forum&family=Cormorant:wght@300;400;500;600;700&display=swap');
         
         * {
             margin: 0;
@@ -16,8 +16,9 @@
         }
         
         body {
-            font-family: 'Tajawal', sans-serif;
-            background: #f5ebe0;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 300;
+            background: #f6f2e7;
             overflow-x: hidden;
             color: #6b5844;
         }
@@ -41,7 +42,7 @@
             position: absolute;
             width: 6px;
             height: 6px;
-            background: radial-gradient(circle, #b8956a 0%, transparent 70%);
+            background: radial-gradient(circle, #bea264 0%, transparent 70%);
             border-radius: 50%;
             opacity: 0;
             animation: float-particle linear infinite;
@@ -66,7 +67,7 @@
         
         /* Header */
         .header {
-            background: rgba(254, 253, 248, 0.95);
+            background: rgba(251, 249, 237, 0.95);
             backdrop-filter: blur(10px);
             padding: 25px 0;
             box-shadow: 0 2px 20px rgba(107, 88, 68, 0.08);
@@ -80,11 +81,11 @@
 
         /* Glass effect on scroll */
         .header.scrolled {
-            background: rgba(254, 253, 248, 0.75);
+            background: rgba(251, 249, 237, 0.75);
             backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
             box-shadow: 0 8px 32px rgba(107, 88, 68, 0.12);
-            border-bottom: 1px solid rgba(184, 149, 106, 0.1);
+            border-bottom: 1px solid rgba(190, 162, 100, 0.1);
         }
         
         @keyframes slideDown {
@@ -123,7 +124,7 @@
             opacity: 0.3;
             animation: birdFloat 6s ease-in-out infinite;
             pointer-events: none;
-            filter: drop-shadow(0 2px 8px rgba(184, 149, 106, 0.3));
+            filter: drop-shadow(0 2px 8px rgba(190, 162, 100, 0.3));
         }
 
         .header-bird.left {
@@ -177,7 +178,7 @@
             height: 65px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 2px 8px rgba(184, 149, 106, 0.2));
+            filter: drop-shadow(0 2px 8px rgba(190, 162, 100, 0.2));
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -186,11 +187,11 @@
         }
 
         .logo {
-            font-family: 'Cinzel', serif;
+            font-family: 'Forum', serif;
             font-size: 28px;
-            font-weight: 500;
-            color: #b8956a;
-            letter-spacing: 8px;
+            font-weight: 400;
+            color: #bea264;
+            letter-spacing: 10px;
             text-transform: uppercase;
             position: relative;
         }
@@ -202,7 +203,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #b8956a, transparent);
+            background: linear-gradient(90deg, #bea264, transparent);
             animation: expandLine 2s ease 1s forwards;
         }
 
@@ -212,10 +213,10 @@
 
         .logo-icon {
             font-size: 36px;
-            color: #b8956a;
+            color: #bea264;
             display: inline-block;
             animation: rotateIcon 4s ease-in-out infinite;
-            filter: drop-shadow(0 2px 4px rgba(184, 149, 106, 0.3));
+            filter: drop-shadow(0 2px 4px rgba(190, 162, 100, 0.3));
         }
 
         @keyframes rotateIcon {
@@ -234,10 +235,11 @@
             color: #8b7355;
             text-decoration: none;
             font-size: 16px;
-            font-weight: 500;
+            font-weight: 400;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             padding: 5px 0;
+            letter-spacing: 0.5px;
         }
         
         .nav-link::after {
@@ -248,12 +250,12 @@
             transform: translateX(-50%);
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, transparent, #b8956a, transparent);
+            background: linear-gradient(90deg, transparent, #bea264, transparent);
             transition: width 0.4s ease;
         }
         
         .nav-link:hover {
-            color: #b8956a;
+            color: #bea264;
             transform: translateY(-2px);
         }
         
@@ -266,31 +268,143 @@
             align-items: center;
             gap: 8px;
             padding: 12px 25px;
-            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
+            background: linear-gradient(135deg, #bea264 0%, #d4b982 100%);
             color: white;
             border: none;
             border-radius: 50px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 400;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(184, 149, 106, 0.3);
+            box-shadow: 0 4px 15px rgba(190, 162, 100, 0.3);
             text-decoration: none;
             white-space: nowrap;
+            letter-spacing: 0.5px;
         }
 
         .contact-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(184, 149, 106, 0.45);
+            box-shadow: 0 8px 25px rgba(190, 162, 100, 0.45);
         }
 
         .contact-button i {
             font-size: 18px;
         }
-        
+
+        /* Main Banner Section */
+        .main-banner {
+            background: linear-gradient(to bottom, #f9f9f9 0%, #e2e2e2 100%);
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .banner-text {
+            padding-right: 40px;
+            animation: fadeInRight 1s ease;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .banner-title {
+            font-family: 'Cormorant', serif;
+            font-size: 48px;
+            color: #6b5844;
+            margin-bottom: 30px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+
+        .banner-description {
+            margin-bottom: 35px;
+            line-height: 1.9;
+        }
+
+        .banner-description p {
+            font-size: 17px;
+            color: #8b7355;
+            margin-bottom: 12px;
+        }
+
+        .banner-description strong {
+            font-weight: 500;
+            color: #6b5844;
+        }
+
+        .banner-description .banner-extra {
+            margin-top: 20px;
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        .banner-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, #bea264 0%, #d4b982 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 19px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 25px rgba(190, 162, 100, 0.3);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .banner-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(190, 162, 100, 0.45);
+        }
+
+        .banner-image {
+            position: relative;
+            animation: fadeInLeft 1s ease;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .banner-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(107, 88, 68, 0.15);
+        }
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #e8d5c0 0%, #d4c4b0 100%);
+            background: linear-gradient(135deg, #e7ddc3 0%, #e7ddc3 100%);
             padding: 120px 40px 100px;
             position: relative;
             overflow: hidden;
@@ -304,8 +418,8 @@
             right: 0;
             bottom: 0;
             background-image: 
-                radial-gradient(circle at 20% 30%, rgba(184, 149, 106, 0.12) 2px, transparent 2px),
-                radial-gradient(circle at 80% 70%, rgba(184, 149, 106, 0.12) 2px, transparent 2px);
+                radial-gradient(circle at 20% 30%, rgba(190, 162, 100, 0.12) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(190, 162, 100, 0.12) 2px, transparent 2px);
             background-size: 60px 60px;
             opacity: 0.6;
             animation: moveBackground 30s linear infinite;
@@ -384,37 +498,38 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: linear-gradient(135deg, rgba(184, 149, 106, 0.2), rgba(201, 168, 118, 0.15));
-            color: #b8956a;
+            background: linear-gradient(135deg, rgba(190, 162, 100, 0.2), rgba(212, 185, 130, 0.15));
+            color: #bea264;
             padding: 10px 24px;
             border-radius: 50px;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 400;
             margin-bottom: 28px;
-            border: 1px solid rgba(184, 149, 106, 0.3);
+            border: 1px solid rgba(190, 162, 100, 0.3);
             animation: pulse 3s ease-in-out infinite;
             backdrop-filter: blur(10px);
+            letter-spacing: 0.5px;
         }
         
         @keyframes pulse {
             0%, 100% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(184, 149, 106, 0.5);
+                box-shadow: 0 0 0 0 rgba(190, 162, 100, 0.5);
             }
             50% {
                 transform: scale(1.05);
-                box-shadow: 0 0 0 15px rgba(184, 149, 106, 0);
+                box-shadow: 0 0 0 15px rgba(190, 162, 100, 0);
             }
         }
         
         .hero-text h1 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Cormorant', serif;
             font-size: 62px;
             color: #6b5844;
             margin-bottom: 20px;
             line-height: 1.2;
-            font-weight: 700;
-            letter-spacing: -1px;
+            font-weight: 400;
+            letter-spacing: 2px;
             display: flex;
             align-items: center;
             gap: 15px;
@@ -423,9 +538,9 @@
         .hero-text h1 .title-icon {
             display: inline-block;
             animation: wiggle 2s ease-in-out infinite;
-            filter: drop-shadow(0 4px 8px rgba(184, 149, 106, 0.4));
+            filter: drop-shadow(0 4px 8px rgba(190, 162, 100, 0.4));
             font-size: 52px;
-            color: #b8956a;
+            color: #bea264;
         }
         
         @keyframes wiggle {
@@ -438,10 +553,10 @@
         
         .hero-subtitle {
             font-size: 28px;
-            color: #b8956a;
+            color: #bea264;
             margin-bottom: 25px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
+            font-weight: 400;
+            letter-spacing: 1px;
         }
         
         .hero-description {
@@ -462,18 +577,19 @@
             align-items: center;
             gap: 12px;
             padding: 20px 45px;
-            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
+            background: linear-gradient(135deg, #bea264 0%, #d4b982 100%);
             color: white;
             border: none;
             border-radius: 50px;
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 400;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 12px 30px rgba(184, 149, 106, 0.35);
+            box-shadow: 0 12px 30px rgba(190, 162, 100, 0.35);
             text-decoration: none;
             position: relative;
             overflow: hidden;
+            letter-spacing: 0.5px;
         }
         
         .cta-button::before {
@@ -496,7 +612,7 @@
         
         .cta-button:hover {
             transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(184, 149, 106, 0.45);
+            box-shadow: 0 16px 40px rgba(190, 162, 100, 0.45);
         }
         
         .cta-button i {
@@ -516,15 +632,15 @@
         
         .cta-button.secondary {
             background: transparent;
-            border: 2px solid #b8956a;
-            color: #b8956a;
-            box-shadow: 0 8px 20px rgba(184, 149, 106, 0.15);
+            border: 2px solid #bea264;
+            color: #bea264;
+            box-shadow: 0 8px 20px rgba(190, 162, 100, 0.15);
         }
         
         .cta-button.secondary:hover {
-            background: #b8956a;
+            background: #bea264;
             color: white;
-            border-color: #b8956a;
+            border-color: #bea264;
         }
         
         .hero-image {
@@ -565,7 +681,7 @@
             left: -20px;
             right: -20px;
             bottom: -20px;
-            background: linear-gradient(45deg, rgba(184, 149, 106, 0.15), transparent, rgba(201, 168, 118, 0.15));
+            background: linear-gradient(45deg, rgba(190, 162, 100, 0.15), transparent, rgba(212, 185, 130, 0.15));
             border-radius: 40px;
             z-index: -1;
             animation: rotateGradient 6s linear infinite;
@@ -624,27 +740,27 @@
         
         .section-tag {
             display: inline-block;
-            background: linear-gradient(135deg, rgba(184, 149, 106, 0.15), rgba(201, 168, 118, 0.1));
-            color: #b8956a;
+            background: linear-gradient(135deg, rgba(190, 162, 100, 0.15), rgba(212, 185, 130, 0.1));
+            color: #bea264;
             padding: 10px 30px;
             border-radius: 50px;
             font-size: 15px;
-            font-weight: 700;
+            font-weight: 400;
             margin-bottom: 15px;
-            letter-spacing: 1px;
-            border: 1px solid rgba(184, 149, 106, 0.2);
+            letter-spacing: 2px;
+            border: 1px solid rgba(190, 162, 100, 0.2);
             animation: slideDown 1s ease;
         }
         
         .section-title {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Cormorant', serif;
             font-size: 52px;
             color: #6b5844;
             margin-bottom: 25px;
-            font-weight: 700;
+            font-weight: 400;
             position: relative;
             display: block;
-            letter-spacing: -1px;
+            letter-spacing: 2px;
         }
         
         .section-title::after {
@@ -656,7 +772,7 @@
             margin: 0 auto;
             width: 100px;
             height: 4px;
-            background: linear-gradient(90deg, transparent, #b8956a, transparent);
+            background: linear-gradient(90deg, transparent, #bea264, transparent);
             border-radius: 2px;
         }
         
@@ -692,7 +808,7 @@
             left: 0;
             right: 0;
             height: 8px;
-            background: linear-gradient(90deg, #b8956a, #c9a876, #b8956a);
+            background: linear-gradient(90deg, #bea264, #d4b982, #bea264);
             background-size: 200% 100%;
             animation: shimmer 4s linear infinite;
         }
@@ -704,7 +820,7 @@
         
         .product-card:hover {
             transform: translateY(-20px) scale(1.03);
-            box-shadow: 0 30px 70px rgba(184, 149, 106, 0.25);
+            box-shadow: 0 30px 70px rgba(190, 162, 100, 0.25);
         }
         
         .product-image-container {
@@ -713,8 +829,8 @@
             margin: 0 auto 35px;
             border-radius: 50%;
             overflow: hidden;
-            border: 6px solid #f5ebe0;
-            background: linear-gradient(135deg, #fefdf8 0%, #f5ebe0 100%);
+            border: 6px solid #f6f2e7;
+            background: linear-gradient(135deg, #fbf9ed 0%, #f6f2e7 100%);
             position: relative;
             box-shadow: 0 10px 30px rgba(107, 88, 68, 0.1);
         }
@@ -751,26 +867,26 @@
             position: absolute;
             top: 35px;
             right: 35px;
-            background: linear-gradient(135deg, #b8956a, #c9a876);
+            background: linear-gradient(135deg, #bea264, #d4b982);
             color: white;
             padding: 10px 22px;
             border-radius: 50px;
             font-size: 13px;
-            font-weight: 700;
-            box-shadow: 0 6px 18px rgba(184, 149, 106, 0.4);
+            font-weight: 400;
+            box-shadow: 0 6px 18px rgba(190, 162, 100, 0.4);
             animation: pulseBadge 2.5s ease-in-out infinite;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
         
         @keyframes pulseBadge {
             0%, 100% {
                 transform: scale(1);
-                box-shadow: 0 6px 18px rgba(184, 149, 106, 0.4);
+                box-shadow: 0 6px 18px rgba(190, 162, 100, 0.4);
             }
             50% {
                 transform: scale(1.08);
-                box-shadow: 0 8px 24px rgba(184, 149, 106, 0.6);
+                box-shadow: 0 8px 24px rgba(190, 162, 100, 0.6);
             }
         }
         
@@ -778,8 +894,9 @@
             font-size: 25px;
             color: #6b5844;
             margin-bottom: 18px;
-            font-weight: 700;
+            font-weight: 400;
             line-height: 1.4;
+            letter-spacing: 0.5px;
         }
         
         .product-card p {
@@ -801,18 +918,19 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: rgba(184, 149, 106, 0.12);
-            color: #b8956a;
+            background: rgba(190, 162, 100, 0.12);
+            color: #bea264;
             padding: 8px 18px;
             border-radius: 25px;
             font-size: 13px;
-            font-weight: 600;
-            border: 1px solid rgba(184, 149, 106, 0.2);
+            font-weight: 400;
+            border: 1px solid rgba(190, 162, 100, 0.2);
             transition: all 0.3s ease;
+            letter-spacing: 0.3px;
         }
         
         .feature-tag:hover {
-            background: rgba(184, 149, 106, 0.2);
+            background: rgba(190, 162, 100, 0.2);
             transform: scale(1.05);
         }
         
@@ -822,20 +940,21 @@
             gap: 10px;
             padding: 15px 35px;
             background: transparent;
-            border: 2px solid #b8956a;
-            color: #b8956a;
+            border: 2px solid #bea264;
+            color: #bea264;
             border-radius: 50px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 400;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 0.5px;
         }
         
         .product-cta:hover {
-            background: #b8956a;
+            background: #bea264;
             color: white;
             transform: scale(1.08);
-            box-shadow: 0 8px 20px rgba(184, 149, 106, 0.3);
+            box-shadow: 0 8px 20px rgba(190, 162, 100, 0.3);
         }
         
         .product-cta i {
@@ -848,7 +967,7 @@
         
         /* Experience Section */
         .experience-section {
-            background: linear-gradient(135deg, #e8d5c0 0%, #d4c4b0 100%);
+            background: linear-gradient(135deg, #e7ddc3 0%, #e7ddc3 100%);
             padding: 120px 40px;
         }
         
@@ -878,7 +997,7 @@
             left: 0;
             width: 6px;
             height: 0;
-            background: linear-gradient(180deg, #b8956a, #c9a876);
+            background: linear-gradient(180deg, #bea264, #d4b982);
             transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
@@ -888,13 +1007,13 @@
         
         .experience-card:hover {
             transform: translateX(12px);
-            box-shadow: 0 20px 50px rgba(184, 149, 106, 0.15);
+            box-shadow: 0 20px 50px rgba(190, 162, 100, 0.15);
         }
         
         .experience-icon {
             width: 90px;
             height: 90px;
-            background: linear-gradient(135deg, #f5ebe0 0%, #e8d5c0 100%);
+            background: linear-gradient(135deg, #f6f2e7 0%, #e7ddc3 100%);
             border-radius: 22px;
             display: flex;
             align-items: center;
@@ -902,20 +1021,21 @@
             font-size: 38px;
             margin-bottom: 28px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 20px rgba(184, 149, 106, 0.15);
-            color: #b8956a;
+            box-shadow: 0 8px 20px rgba(190, 162, 100, 0.15);
+            color: #bea264;
         }
         
         .experience-card:hover .experience-icon {
             transform: scale(1.15) rotate(8deg);
-            box-shadow: 0 12px 30px rgba(184, 149, 106, 0.25);
+            box-shadow: 0 12px 30px rgba(190, 162, 100, 0.25);
         }
         
         .experience-card h3 {
             font-size: 27px;
             color: #6b5844;
             margin-bottom: 18px;
-            font-weight: 700;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
         
         .experience-card p {
@@ -942,7 +1062,7 @@
             text-align: center;
             padding: 45px 30px;
             border-radius: 25px;
-            background: linear-gradient(135deg, #fefdf8 0%, #f5ebe0 100%);
+            background: linear-gradient(135deg, #fbf9ed 0%, #f6f2e7 100%);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             position: relative;
@@ -956,7 +1076,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(184, 149, 106, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(190, 162, 100, 0.1), transparent);
             transition: left 0.6s ease;
         }
         
@@ -966,21 +1086,21 @@
         
         .feature-card:hover {
             transform: translateY(-12px);
-            box-shadow: 0 20px 50px rgba(184, 149, 106, 0.18);
+            box-shadow: 0 20px 50px rgba(190, 162, 100, 0.18);
         }
         
         .feature-icon-wrapper {
             width: 110px;
             height: 110px;
             margin: 0 auto 30px;
-            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
+            background: linear-gradient(135deg, #bea264 0%, #d4b982 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 45px;
             color: white;
-            box-shadow: 0 15px 35px rgba(184, 149, 106, 0.35);
+            box-shadow: 0 15px 35px rgba(190, 162, 100, 0.35);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
         }
@@ -991,7 +1111,7 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 3px solid rgba(184, 149, 106, 0.4);
+            border: 3px solid rgba(190, 162, 100, 0.4);
             animation: ripple 2s infinite;
         }
         
@@ -1008,14 +1128,15 @@
         
         .feature-card:hover .feature-icon-wrapper {
             transform: scale(1.2) rotate(360deg);
-            box-shadow: 0 20px 45px rgba(184, 149, 106, 0.45);
+            box-shadow: 0 20px 45px rgba(190, 162, 100, 0.45);
         }
         
         .feature-card h4 {
             font-size: 21px;
             color: #6b5844;
             margin-bottom: 15px;
-            font-weight: 700;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
         
         .feature-card p {
@@ -1060,7 +1181,7 @@
         }
         
         .delivery-section .section-title::after {
-            background: linear-gradient(90deg, transparent, #c9a876, transparent);
+            background: linear-gradient(90deg, transparent, #d4b982, transparent);
         }
         
         .delivery-section .section-description {
@@ -1114,7 +1235,7 @@
             width: 80px;
             height: 80px;
             margin: 0 auto 20px;
-            background: rgba(201, 168, 118, 0.3);
+            background: rgba(212, 185, 130, 0.3);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1124,18 +1245,19 @@
         
         .delivery-app:hover .delivery-app-icon {
             transform: scale(1.15) rotate(360deg);
-            background: rgba(201, 168, 118, 0.5);
+            background: rgba(212, 185, 130, 0.5);
         }
         
         .delivery-app-icon i {
             font-size: 38px;
-            color: #c9a876;
+            color: #d4b982;
         }
         
         .delivery-app h4 {
             font-size: 24px;
-            font-weight: 700;
+            font-weight: 400;
             margin-bottom: 10px;
+            letter-spacing: 0.5px;
         }
         
         .delivery-app p {
@@ -1145,7 +1267,7 @@
         
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, #e8d5c0 0%, #d4c4b0 100%);
+            background: linear-gradient(135deg, #e7ddc3 0%, #e7ddc3 100%);
             padding: 120px 40px;
             text-align: center;
             position: relative;
@@ -1157,7 +1279,7 @@
             font-size: 120px;
             opacity: 0.08;
             animation: floatEmoji 15s ease-in-out infinite;
-            color: #b8956a;
+            color: #bea264;
         }
         
         @keyframes floatEmoji {
@@ -1201,12 +1323,12 @@
         }
         
         .cta-content h2 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Cormorant', serif;
             font-size: 56px;
             color: #6b5844;
             margin-bottom: 28px;
-            font-weight: 700;
-            letter-spacing: -1px;
+            font-weight: 400;
+            letter-spacing: 1px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1214,7 +1336,7 @@
         }
         
         .cta-content h2 i {
-            color: #b8956a;
+            color: #bea264;
         }
         
         .cta-content p {
@@ -1222,7 +1344,8 @@
             color: #8b7355;
             margin-bottom: 45px;
             line-height: 1.6;
-            font-weight: 500;
+            font-weight: 300;
+            letter-spacing: 0.3px;
         }
         
         .cta-buttons-large {
@@ -1257,10 +1380,11 @@
         }
         
         .footer-brand h3 {
-            font-family: 'Cinzel', serif;
+            font-family: 'Forum', serif;
             font-size: 34px;
-            letter-spacing: 7px;
+            letter-spacing: 10px;
             margin-bottom: 25px;
+            font-weight: 400;
         }
         
         .footer-brand p {
@@ -1290,15 +1414,16 @@
         }
         
         .social-link:hover {
-            background: #b8956a;
+            background: #bea264;
             transform: translateY(-8px) rotate(360deg);
-            box-shadow: 0 10px 25px rgba(184, 149, 106, 0.4);
+            box-shadow: 0 10px 25px rgba(190, 162, 100, 0.4);
         }
         
         .footer-section h4 {
             font-size: 19px;
             margin-bottom: 25px;
-            font-weight: 700;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
         
         .footer-section ul {
@@ -1318,7 +1443,7 @@
         }
         
         .footer-section ul li a:hover {
-            color: #c9a876;
+            color: #d4b982;
             transform: translateX(8px);
         }
         
@@ -1340,7 +1465,7 @@
             margin: 40px auto;
             display: block;
             opacity: 0.6;
-            filter: drop-shadow(0 2px 6px rgba(184, 149, 106, 0.2));
+            filter: drop-shadow(0 2px 6px rgba(190, 162, 100, 0.2));
         }
 
         /* Floating Birds in Sections */
@@ -1351,7 +1476,7 @@
             opacity: 0.15;
             animation: sectionBirdFloat 8s ease-in-out infinite;
             pointer-events: none;
-            filter: drop-shadow(0 2px 8px rgba(184, 149, 106, 0.3));
+            filter: drop-shadow(0 2px 8px rgba(190, 162, 100, 0.3));
         }
 
         @keyframes sectionBirdFloat {
@@ -1399,7 +1524,7 @@
             left: 35px;
             width: 58px;
             height: 58px;
-            background: linear-gradient(135deg, #b8956a, #c9a876);
+            background: linear-gradient(135deg, #bea264, #d4b982);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1407,7 +1532,7 @@
             color: white;
             font-size: 24px;
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(184, 149, 106, 0.45);
+            box-shadow: 0 10px 30px rgba(190, 162, 100, 0.45);
             opacity: 0;
             visibility: hidden;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1421,7 +1546,7 @@
         
         .scroll-top:hover {
             transform: translateY(-8px) scale(1.1);
-            box-shadow: 0 15px 40px rgba(184, 149, 106, 0.55);
+            box-shadow: 0 15px 40px rgba(190, 162, 100, 0.55);
         }
         
         /* Responsive */
@@ -1502,7 +1627,39 @@
             .contact-button i {
                 font-size: 20px;
             }
-            
+
+            .main-banner {
+                padding: 50px 25px;
+            }
+
+            .banner-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .banner-text {
+                padding-right: 0;
+                order: 2;
+            }
+
+            .banner-image {
+                order: 1;
+            }
+
+            .banner-title {
+                font-size: 32px;
+            }
+
+            .banner-description p {
+                font-size: 15px;
+            }
+
+            .banner-button {
+                padding: 15px 35px;
+                font-size: 16px;
+                width: 100%;
+            }
+
             .hero {
                 padding: 90px 25px 70px;
             }
@@ -1574,51 +1731,24 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <!-- Floating Decorations -->
-        <svg class="floating-decoration decor-1" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" fill="none" stroke="#b8956a" stroke-width="2"/>
-            <path d="M50,20 Q60,40 50,60 Q40,40 50,20" fill="#b8956a" opacity="0.6"/>
-        </svg>
-        <svg class="floating-decoration decor-2" viewBox="0 0 100 100">
-            <path d="M50,10 L60,40 L90,40 L65,60 L75,90 L50,70 L25,90 L35,60 L10,40 L40,40 Z" fill="#b8956a" opacity="0.6"/>
-        </svg>
-        <svg class="floating-decoration decor-3" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="30" fill="none" stroke="#b8956a" stroke-width="3"/>
-            <circle cx="50" cy="50" r="15" fill="#b8956a" opacity="0.6"/>
-        </svg>
-        
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="hero-badge">
-                    <i class="fas fa-crown"></i>
-                    الفخامة في كل تفصيلة
+    <!-- Main Banner Section -->
+    <section class="main-banner">
+        <div class="banner-content">
+            <div class="banner-text">
+                <h1 class="banner-title">الصباح عاج مل العابح المساج:</h1>
+                <div class="banner-description">
+                    <p><strong>العسل الصافي؛ المديديفقيع، المقنيعثين:</strong></p>
+                    <p>حجماثهم الوروندوسط الشض لغير لبوليفير مروبالعزي</p>
+                    <p>العسير؛ و نديم بدسع كسفع لشو اني جدو اني ذش المتريج هذ:</p>
+                    <p>كيه مطي موادليب أو لمطب هصنهم بشكي</p>
+                    <p class="banner-extra">آلين فييذفليمبرية</p>
                 </div>
-                <h1>
-                    LA FONCIA 
-                    <i class="fas fa-candy-cane title-icon"></i>
-                </h1>
-                <p class="hero-subtitle">متعة مطلقة في كل قضمة</p>
-                <p class="hero-description">
-                    في LA FONCIA، الفخامة ليست وعدًا... بل إحساس يُعاش. نقدم شوكولاتة محشوة بعناية، 
-                    حيث تلتقي القوامات الغنية مع مكس مبتكر من الحشوات، لتخلق تجربة تذوق استثنائية في كل قطعة.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#products" class="cta-button">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>اطلب الآن</span>
-                    </a>
-                    <a href="#experience" class="cta-button secondary">
-                        <i class="fas fa-chevron-down"></i>
-                        <span>اكتشف المزيد</span>
-                    </a>
-                </div>
+                <a href="#products" class="banner-button">
+                    اطلر "صحبك" اللذيذ
+                </a>
             </div>
-            <div class="hero-image">
-                <div class="product-box">
-                    <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=800&h=800&fit=crop" alt="LA FONCIA شوكولاتة فاخرة">
-                </div>
+            <div class="banner-image">
+                <img src="in banner.png" alt="LA FONCIA Premium Chocolates" loading="eager">
             </div>
         </div>
     </section>
@@ -1934,7 +2064,7 @@
                 <p>
                     <i class="far fa-copyright"></i> 2024 LA FONCIA - جميع الحقوق محفوظة | 
                     صُنع بحب في المملكة العربية السعودية 
-                    <i class="fas fa-heart" style="color: #c9a876;"></i>
+                    <i class="fas fa-heart" style="color: #d4b982;"></i>
                 </p>
             </div>
         </div>
