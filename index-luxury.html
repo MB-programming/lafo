@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LA FONCIA - Pure Luxury</title>
+    <title>LA FONCIA - شوكولاتة فاخرة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500&family=Bodoni+Moda:wght@400;500;600;700;800;900&family=Libre+Baskerville:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500&family=Bodoni+Moda:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap');
 
         * {
             margin: 0;
@@ -15,123 +15,49 @@
         }
 
         body {
-            font-family: 'Tajawal', sans-serif;
-            background: #0d0d0d;
-            color: #f5f5f5;
+            font-family: 'Cairo', sans-serif;
+            background: #fefdf8;
+            color: #6b5844;
             overflow-x: hidden;
-            font-weight: 300;
         }
 
-        /* Luxury Background */
-        .luxury-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background:
-                radial-gradient(circle at 30% 40%, rgba(184, 149, 106, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 70% 60%, rgba(201, 168, 118, 0.06) 0%, transparent 50%),
-                linear-gradient(135deg, #0d0d0d 0%, #1a1410 100%);
-            z-index: -1;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
         }
 
-        .golden-lines {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                linear-gradient(90deg, transparent 0%, rgba(184, 149, 106, 0.05) 50%, transparent 100%);
-            background-size: 200px 100%;
-            z-index: -1;
-            animation: slideLines 20s linear infinite;
-        }
-
-        @keyframes slideLines {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 200px 0;
-            }
-        }
-
-        /* Luxury Header */
-        .header-luxury {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 35px 0;
-            background: rgba(13, 13, 13, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(184, 149, 106, 0.15);
-            transition: all 0.4s ease;
-        }
-
-        .header-luxury.scrolled {
-            padding: 25px 0;
-            border-bottom-color: rgba(184, 149, 106, 0.3);
-        }
-
-        .logo-container-luxury {
+        /* Header */
+        .header {
+            padding: 30px 0;
             text-align: center;
+            background: #fefdf8;
         }
 
-        .logo-luxury {
-            height: 90px;
-            filter: brightness(0) invert(1) drop-shadow(0 5px 25px rgba(184, 149, 106, 0.4));
-            transition: all 0.4s ease;
+        .logo {
+            width: 180px;
+            height: auto;
         }
 
-        .logo-luxury:hover {
-            transform: scale(1.05);
-            filter: brightness(0) invert(1) drop-shadow(0 10px 40px rgba(184, 149, 106, 0.6));
-        }
-
-        /* Hero Luxury */
-        .hero-luxury {
+        /* Hero Section */
+        .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 160px 60px 100px;
-            position: relative;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, #f5ebe0 0%, #fefdf8 100%);
         }
 
-        .hero-luxury::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(184, 149, 106, 0.1) 0%, transparent 70%);
-            z-index: 0;
+        .hero-content {
+            animation: fadeInUp 1s ease;
         }
 
-        .hero-container-luxury {
-            max-width: 1600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 100px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-text-luxury {
-            opacity: 0;
-            animation: luxuryReveal 1.5s ease forwards;
-            animation-delay: 0.3s;
-        }
-
-        @keyframes luxuryReveal {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -139,558 +65,499 @@
             }
         }
 
-        .luxury-label {
-            font-size: 12px;
+        h1 {
+            font-family: 'Forum', serif;
+            font-size: 56px;
             color: #b8956a;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            letter-spacing: 8px;
             font-weight: 400;
         }
 
-        .hero-luxury h1 {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 110px;
-            font-weight: 700;
-            color: transparent;
-            background: linear-gradient(135deg, #d4c4b0 0%, #b8956a 50%, #d4c4b0 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            margin-bottom: 30px;
-            line-height: 1;
-            letter-spacing: -2px;
-        }
-
-        .hero-luxury .subtitle {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 28px;
-            color: #b8956a;
+        .tagline {
+            font-size: 24px;
+            color: #8b7355;
             margin-bottom: 40px;
-            font-weight: 400;
-            font-style: italic;
-        }
-
-        .divider-gold {
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(to right, #b8956a, transparent);
-            margin: 40px 0;
-        }
-
-        .hero-luxury .description {
-            font-size: 18px;
-            color: #c8c8c8;
-            line-height: 2;
-            margin-bottom: 60px;
             font-weight: 300;
         }
 
-        .cta-luxury-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 20px;
-            padding: 20px 50px;
-            background: transparent;
-            border: 2px solid #b8956a;
-            color: #b8956a;
-            font-size: 14px;
-            font-weight: 400;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.5s ease;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-luxury-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        .product-image {
+            max-width: 500px;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #b8956a, #c9a876);
-            transition: left 0.5s ease;
-            z-index: -1;
+            height: auto;
+            margin: 50px auto;
         }
 
-        .cta-luxury-btn:hover::before {
-            left: 0;
+        /* Dual Filling Section */
+        .dual-filling {
+            padding: 100px 30px;
+            background: #fefdf8;
         }
 
-        .cta-luxury-btn:hover {
-            color: #0d0d0d;
-            border-color: #c9a876;
-        }
-
-        .hero-image-luxury {
-            position: relative;
-            opacity: 0;
-            animation: luxuryReveal 1.5s ease forwards;
-            animation-delay: 0.6s;
-        }
-
-        .luxury-frame {
-            position: relative;
-            padding: 50px;
-            background: linear-gradient(135deg, rgba(184, 149, 106, 0.1), rgba(26, 20, 16, 0.3));
-            border: 1px solid rgba(184, 149, 106, 0.3);
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
-        }
-
-        .luxury-frame::before {
-            content: '';
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            right: 25px;
-            bottom: 25px;
-            border: 1px solid rgba(184, 149, 106, 0.2);
-        }
-
-        .luxury-frame img {
-            width: 100%;
-            position: relative;
-        }
-
-        /* Collection Luxury */
-        .collection-luxury {
-            padding: 150px 60px;
-        }
-
-        .section-header-luxury {
+        .section-title {
             text-align: center;
-            margin-bottom: 100px;
-        }
-
-        .section-label-luxury {
-            font-size: 12px;
-            color: #b8956a;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .section-header-luxury h2 {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 75px;
-            font-weight: 700;
-            color: transparent;
-            background: linear-gradient(135deg, #d4c4b0, #b8956a);
-            -webkit-background-clip: text;
-            background-clip: text;
-            margin-bottom: 30px;
-        }
-
-        .section-header-luxury p {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 20px;
-            color: #a8a8a8;
-            font-style: italic;
-        }
-
-        .collection-grid-luxury {
-            max-width: 1600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 50px;
-        }
-
-        .collection-card-luxury {
-            background: linear-gradient(135deg, rgba(26, 20, 16, 0.5), rgba(13, 13, 13, 0.8));
-            border: 1px solid rgba(184, 149, 106, 0.2);
-            transition: all 0.6s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .collection-card-luxury::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(184, 149, 106, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.8s ease;
-        }
-
-        .collection-card-luxury:hover::before {
-            left: 50%;
-        }
-
-        .collection-card-luxury:hover {
-            border-color: rgba(184, 149, 106, 0.6);
-            transform: translateY(-15px);
-            box-shadow: 0 30px 80px rgba(184, 149, 106, 0.2);
-        }
-
-        .collection-image-luxury {
-            width: 100%;
-            height: 450px;
-            overflow: hidden;
-        }
-
-        .collection-image-luxury img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-
-        .collection-card-luxury:hover .collection-image-luxury img {
-            transform: scale(1.1);
-        }
-
-        .collection-info-luxury {
-            padding: 50px 40px;
-        }
-
-        .collection-number-luxury {
-            font-size: 11px;
-            color: #b8956a;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .collection-info-luxury h3 {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 32px;
-            color: #f5f5f5;
+            font-size: 42px;
+            color: #6b5844;
             margin-bottom: 20px;
             font-weight: 600;
         }
 
-        .collection-info-luxury p {
-            font-size: 16px;
-            color: #a8a8a8;
-            line-height: 1.9;
-            margin-bottom: 30px;
+        .section-subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: #8b7355;
+            margin-bottom: 60px;
         }
 
-        .collection-link {
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(107, 88, 68, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(107, 88, 68, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .product-name {
+            font-size: 24px;
+            color: #6b5844;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .product-desc {
+            font-size: 16px;
+            color: #8b7355;
+            line-height: 1.6;
+        }
+
+        /* Why Section */
+        .why-section {
+            padding: 100px 30px;
+            background: linear-gradient(135deg, #f5ebe0 0%, #fefdf8 100%);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(107, 88, 68, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(107, 88, 68, 0.15);
+        }
+
+        .why-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 40px;
+            color: white;
+        }
+
+        .why-title {
+            font-size: 20px;
+            color: #6b5844;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .why-desc {
+            font-size: 15px;
+            color: #8b7355;
+            line-height: 1.6;
+        }
+
+        /* Order Now Section */
+        .order-section {
+            padding: 100px 30px;
+            background: #fefdf8;
+            text-align: center;
+        }
+
+        .order-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .order-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            color: #b8956a;
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .collection-link:hover {
-            gap: 15px;
-            color: #d4c4b0;
-        }
-
-        /* Statement Section */
-        .statement-luxury {
-            padding: 150px 60px;
-            background: linear-gradient(135deg, rgba(184, 149, 106, 0.05), transparent);
-            text-align: center;
-        }
-
-        .statement-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .statement-content h2 {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 80px;
-            font-weight: 700;
-            color: transparent;
-            background: linear-gradient(135deg, #d4c4b0, #b8956a);
-            -webkit-background-clip: text;
-            background-clip: text;
-            margin-bottom: 50px;
-        }
-
-        .statement-content p {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 24px;
-            color: #c8c8c8;
-            line-height: 2.2;
-            font-style: italic;
-        }
-
-        /* CTA Luxury */
-        .cta-luxury-section {
-            padding: 150px 60px;
-            text-align: center;
-        }
-
-        .cta-luxury-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .cta-luxury-content h2 {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 75px;
-            font-weight: 700;
-            color: transparent;
-            background: linear-gradient(135deg, #d4c4b0, #b8956a);
-            -webkit-background-clip: text;
-            background-clip: text;
-            margin-bottom: 30px;
-        }
-
-        .cta-luxury-content p {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 22px;
-            color: #a8a8a8;
-            margin-bottom: 60px;
-            font-style: italic;
-        }
-
-        /* Footer Luxury */
-        .footer-luxury {
-            padding: 100px 60px 50px;
-            background: rgba(13, 13, 13, 0.95);
-            border-top: 1px solid rgba(184, 149, 106, 0.15);
-            text-align: center;
-        }
-
-        .footer-logo-luxury {
-            height: 100px;
-            margin-bottom: 40px;
-            filter: brightness(0) invert(1) drop-shadow(0 5px 30px rgba(184, 149, 106, 0.3));
-        }
-
-        .footer-quote {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 18px;
-            color: #b8956a;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        .footer-text-luxury {
-            font-size: 12px;
+            gap: 12px;
+            padding: 18px 40px;
+            background: white;
             color: #6b5844;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            border: 2px solid #b8956a;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
         }
+
+        .order-btn:hover {
+            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(184, 149, 106, 0.3);
+        }
+
+        .order-btn i {
+            font-size: 22px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b8956a;
+            font-size: 28px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(107, 88, 68, 0.1);
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
+            color: white;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(184, 149, 106, 0.3);
+        }
+
+        /* CTA Final Section */
+        .cta-final {
+            padding: 100px 30px;
+            background: linear-gradient(135deg, #6b5844 0%, #8b7355 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-final h2 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .cta-final p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 22px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(184, 149, 106, 0.3);
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(184, 149, 106, 0.5);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 50px 30px;
+            background: #6b5844;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .footer-logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        
+        body { background: #0d0d0d; color: #f5ebe0; }
+        .section-title {
+            font-family: 'Bodoni Moda', serif;
+            color: #c9a876;
+            font-size: 50px;
+            letter-spacing: 4px;
+        }
+        .product-name, .why-title { color: #b8956a; }
+        .section-subtitle, .product-desc, .why-desc { color: #c0b5a7; }
+        .product-card, .why-card {
+            background: rgba(26, 20, 16, 0.6);
+            border: 1px solid rgba(184, 149, 106, 0.3);
+            box-shadow: 0 15px 50px rgba(184, 149, 106, 0.15);
+        }
+        .product-card:hover, .why-card:hover {
+            border-color: #b8956a;
+            box-shadow: 0 25px 70px rgba(184, 149, 106, 0.3);
+        }
+        .footer { background: #0a0807; color: rgba(255, 255, 255, 0.6); }
+        @keyframes goldShine {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .section-title {
+            background: linear-gradient(90deg, #b8956a, #c9a876, #b8956a);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldShine 3s ease infinite;
+        }
+        
 
         /* Responsive */
-        @media (max-width: 1200px) {
-            .hero-container-luxury {
-                grid-template-columns: 1fr;
-                gap: 80px;
-            }
-
-            .collection-grid-luxury {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
         @media (max-width: 768px) {
-            .hero-luxury h1,
-            .section-header-luxury h2,
-            .statement-content h2,
-            .cta-luxury-content h2 {
-                font-size: 48px;
+            h1 {
+                font-size: 36px;
+                letter-spacing: 4px;
             }
 
-            .collection-grid-luxury {
+            .tagline {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .products-grid {
                 grid-template-columns: 1fr;
             }
 
-            .hero-luxury,
-            .collection-luxury,
-            .statement-luxury,
-            .cta-luxury-section,
-            .footer-luxury {
-                padding-left: 30px;
-                padding-right: 30px;
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .order-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .order-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .cta-final h2 {
+                font-size: 32px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Luxury Background -->
-    <div class="luxury-bg"></div>
-    <div class="golden-lines"></div>
-
-    <!-- Header Luxury -->
-    <header class="header-luxury" id="header">
-        <div class="logo-container-luxury">
-            <img src="logo.webp" alt="LA FONCIA" class="logo-luxury">
-        </div>
+    <!-- Header -->
+    <header class="header">
+        <img src="logo.webp" alt="LA FONCIA" class="logo">
     </header>
 
-    <!-- Hero Luxury -->
-    <section class="hero-luxury">
-        <div class="hero-container-luxury">
-            <div class="hero-text-luxury">
-                <p class="luxury-label">Pure Indulgence</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
                 <h1>LA FONCIA</h1>
-                <p class="subtitle">The Art of Chocolate Perfection</p>
-                <div class="divider-gold"></div>
-                <p class="description">
-                    في عالم LA FONCIA، كل قطعة شوكولاتة هي تحفة فنية.
-                    نقدم لكم تجربة استثنائية من الشوكولاتة البلجيكية الفاخرة
-                    مع حشوات طبيعية مبتكرة، في رحلة من النكهات الراقية.
+                <p class="tagline">حين تتحول الشوكولاتة إلى تجربة فاخرة</p>
+                <img src="in-banner-Photoroom.png" alt="LA FONCIA Chocolates" class="product-image">
+                <p style="font-size: 20px; color: #8b7355; margin-top: 30px;">
+                    اكتشف غابتنا من الخيارات المتنوعة
                 </p>
-                <a href="#collection" class="cta-luxury-btn">
-                    <span>Discover Collection</span>
-                    <i class="fas fa-arrow-left"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dual Filling Section -->
+    <section class="dual-filling">
+        <div class="container">
+            <h2 class="section-title">الحشوة المزدوجة - تجربة فريدة في كل قطعة</h2>
+            <p class="section-subtitle">كل قطعة شوكولاتة في بوكساتنا تحتوي على حشوتين مختلفتين، لتجربة مدهش استثنائية وممتعة بطعمك</p>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="image-choc-3.webp" alt="كراميل دابل">
+                    <div class="product-info">
+                        <h3 class="product-name">كراميل دابل</h3>
+                        <p class="product-desc">توت كرانش بحشوة كراميل طبقة مثالية داخلية استثنائية مع الكراميل السائل الكراميل</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="image-five.webp" alt="فستق كرانشي">
+                    <div class="product-info">
+                        <h3 class="product-name">فستق كرانشي</h3>
+                        <p class="product-desc">مبس وشي زبدة الفستق، نحاول تفصل في رقي وتألق أفضل الاحتياجات المتنوعة والممتعة التجربة الشغفية</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="image-choco.webp" alt="نوت طبقة">
+                    <div class="product-info">
+                        <h3 class="product-name">نوت طبقة</h3>
+                        <p class="product-desc">استخدم عائلتي الشهي الاحتياجات فريد فنيتي أحاستيك طعموا طبقة مع الكراميل السائل الكريمي فخري أعماق</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why LA FONCIA Section -->
+    <section class="why-section">
+        <div class="container">
+            <h2 class="section-title">؟LA FONCIA لماذا</h2>
+            <p class="section-subtitle">نقدم لكم أجود تجربة فريدة تجمع بين الجودة والمذاق والتغليف في كل قطعة</p>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="why-title">تجربة فاخرة من أول نظرة حتى آخر قضمة</h3>
+                    <p class="why-desc">كل التفاصيل المميزة معتنية بيها، لإعطائكم وتأكيد تسجل مميز أنيقا لماما شوارع</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-glasses"></i>
+                    </div>
+                    <h3 class="why-title">بوكسات جاهزة للإهداء</h3>
+                    <p class="why-desc">أطقم عالقي زاهية فائقة زملائك، بعبل تن رقيمي المستحق ننتفى خاصية دايم الضحكة</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="why-title">مكونات عالية الجودة</h3>
+                    <p class="why-desc">استخدم عاجز أتميل الاحتياجات الإرثاب والشوكولاتة للحصول دون الجودة تضبط أعماق</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="why-title">مكبس متنوعة في القطعة الواحدة</h3>
+                    <p class="why-desc">تنوعا فعقد رقم جريد منافس جودة أنواع الصدود مع متعددة الاحتياجات والتناسبية الضحكة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Now Section -->
+    <section class="order-section">
+        <div class="container">
+            <h2 class="section-title">LA FONCIA اطلب الآن</h2>
+            <p class="section-subtitle">اختر طريقتك المفضلة للطلب واستمتع بتجربة التوصيل السريع</p>
+
+            <div class="order-buttons">
+                <a href="https://wa.me/966501234567" class="order-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    تواصل عبر واتساب
+                </a>
+
+                <a href="#" class="order-btn">
+                    <i class="fas fa-map-marker-alt"></i>
+                    مواقعنا الجغرافية
+                </a>
+
+                <a href="#" class="order-btn">
+                    <i class="fas fa-shipping-fast"></i>
+                    الطلب من تطبيقات التوصيل
                 </a>
             </div>
-            <div class="hero-image-luxury">
-                <div class="luxury-frame">
-                    <img src="in-banner-Photoroom.png" alt="LA FONCIA Luxury">
-                </div>
+
+            <div class="social-icons">
+                <a href="#" class="social-icon">
+                    <i class="fab fa-snapchat-ghost"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://twitter.com/lafoncia" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/lafoncia.sa" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Collection Luxury -->
-    <section class="collection-luxury" id="collection">
-        <div class="section-header-luxury">
-            <p class="section-label-luxury">Exclusive Selection</p>
-            <h2>The Collection</h2>
-            <p>تشكيلات فاخرة من أجود أنواع الشوكولاتة</p>
-        </div>
-
-        <div class="collection-grid-luxury">
-            <div class="collection-card-luxury">
-                <div class="collection-image-luxury">
-                    <img src="image-choc-3.webp" alt="Caramel Supreme">
-                </div>
-                <div class="collection-info-luxury">
-                    <p class="collection-number-luxury">Edition I</p>
-                    <h3>Caramel Supreme</h3>
-                    <p>
-                        كراميل ذهبي فاخر محضّر بطريقة تقليدية، يذوب في فمك
-                        مع شوكولاتة بلجيكية داكنة فاخرة.
-                    </p>
-                    <a href="#order" class="collection-link">
-                        <span>Order Now</span>
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="collection-card-luxury">
-                <div class="collection-image-luxury">
-                    <img src="image-choco.webp" alt="Berry Elegance">
-                </div>
-                <div class="collection-info-luxury">
-                    <p class="collection-number-luxury">Edition II</p>
-                    <h3>Berry Elegance</h3>
-                    <p>
-                        توت طبيعي منتقى بعناية يمتزج مع شوكولاتة بلجيكية
-                        لتجربة منعشة وراقية.
-                    </p>
-                    <a href="#order" class="collection-link">
-                        <span>Order Now</span>
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="collection-card-luxury">
-                <div class="collection-image-luxury">
-                    <img src="image-five.webp" alt="Pistachio Prestige">
-                </div>
-                <div class="collection-info-luxury">
-                    <p class="collection-number-luxury">Edition III</p>
-                    <h3>Pistachio Prestige</h3>
-                    <p>
-                        فستق فاخر محمّص بقوام كريمي غني، تجربة استثنائية
-                        من الطعم والفخامة.
-                    </p>
-                    <a href="#order" class="collection-link">
-                        <span>Order Now</span>
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Statement Section -->
-    <section class="statement-luxury">
-        <div class="statement-content">
-            <h2>Pure Luxury</h2>
-            <p>
-                "في LA FONCIA، نؤمن بأن الشوكولاتة الفاخرة هي أكثر من مجرد حلوى.
-                إنها تجربة، فن، وشغف يتجسد في كل قطعة نصنعها بعناية فائقة."
-            </p>
-        </div>
-    </section>
-
-    <!-- CTA Luxury -->
-    <section class="cta-luxury-section" id="order">
-        <div class="cta-luxury-content">
-            <h2>Experience LA FONCIA</h2>
-            <p>اطلب الآن واستمتع بتجربة الشوكولاتة الفاخرة</p>
-            <a href="https://wa.me/966501234567" class="cta-luxury-btn" style="padding: 24px 60px; font-size: 16px;">
-                <i class="fab fa-whatsapp"></i>
-                <span>Order via WhatsApp</span>
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>هل أنت مستعد للتجربة؟</h2>
+            <p>LA FONCIA حين نتحول الشوكولاتة إلى أسلوب دفوق</p>
+            <a href="https://wa.me/966501234567" class="cta-button">
+                <i class="fas fa-shopping-bag"></i>
+                اطلب بوكس LA FONCIA الفاخر الآن
             </a>
         </div>
     </section>
 
-    <!-- Footer Luxury -->
-    <footer class="footer-luxury">
-        <img src="logo.webp" alt="LA FONCIA" class="footer-logo-luxury">
-        <p class="footer-quote">"Where Luxury Meets Taste"</p>
-        <p class="footer-text-luxury">© 2024 LA FONCIA - Crafted with Excellence in Saudi Arabia</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <img src="logo.webp" alt="LA FONCIA" class="footer-logo">
+        <p>نحن لكم أفضل أنواع الشوكولاتة البلجيكية الفاخرة، شال كل قطعة هي تحفة فنية تجمع بين الجودة والمذاق والتغليف</p>
+        <p style="margin-top: 20px;">&copy; 2024 LA FONCIA - جميع الحقوق محفوظة | صنع بكل حب في المملكة العربية السعودية 🇸🇦</p>
     </footer>
-
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 80) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if(target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Intersection Observer for fade-in
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.collection-card-luxury').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(40px)';
-            el.style.transition = 'all 1s ease';
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
