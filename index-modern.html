@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LA FONCIA - تجربة شوكولاتة استثنائية</title>
+    <title>LA FONCIA - شوكولاتة فاخرة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Cormorant:wght@400;500;600&family=Forum&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Cormorant:wght@400;600&display=swap');
 
         * {
             margin: 0;
@@ -19,1091 +19,520 @@
             background: #fefdf8;
             color: #6b5844;
             overflow-x: hidden;
-            line-height: 1.6;
         }
 
-        /* Modern Header */
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(254, 253, 248, 0.95);
-            backdrop-filter: blur(20px);
-            padding: 20px 0;
-            box-shadow: 0 2px 30px rgba(107, 88, 68, 0.08);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-img {
-            height: 60px;
-        }
-
-        .nav {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav a {
-            color: #8b7355;
-            text-decoration: none;
-            font-weight: 400;
-            transition: color 0.3s ease;
-        }
-
-        .nav a:hover {
-            color: #b8956a;
-        }
-
-        /* Modern Hero */
-        .hero-modern {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #e8d5c0 0%, #d4c4b0 100%);
-            display: flex;
-            align-items: center;
-            padding: 120px 40px 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-modern::before {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(184, 149, 106, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            top: -200px;
-            right: -200px;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-30px) scale(1.1); }
-        }
-
-        .hero-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-text h1 {
-            font-family: 'Forum', serif;
-            font-size: 68px;
-            color: #b8956a;
-            margin-bottom: 25px;
-            letter-spacing: 8px;
-            line-height: 1.2;
-        }
-
-        .hero-text .subtitle {
-            font-family: 'Cormorant', serif;
-            font-size: 32px;
-            color: #6b5844;
-            margin-bottom: 30px;
-        }
-
-        .hero-text p {
-            font-size: 18px;
-            color: #8b7355;
-            margin-bottom: 40px;
-            line-height: 1.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn-primary {
-            padding: 18px 45px;
-            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(184, 149, 106, 0.3);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(184, 149, 106, 0.45);
-        }
-
-        .btn-secondary {
-            padding: 18px 45px;
-            background: transparent;
-            color: #b8956a;
-            border: 2px solid #b8956a;
-            border-radius: 50px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-secondary:hover {
-            background: #b8956a;
-            color: white;
-        }
-
-        .hero-image img {
-            width: 100%;
-            border-radius: 30px;
-            box-shadow: 0 30px 80px rgba(107, 88, 68, 0.2);
-        }
-
-        /* Stats Section */
-        .stats {
-            background: white;
-            padding: 80px 40px;
-        }
-
-        .stats-grid {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
+            padding: 0 30px;
+        }
+
+        /* Header */
+        .header {
+            padding: 30px 0;
             text-align: center;
+            background: #fefdf8;
         }
 
-        .stat-item h3 {
-            font-size: 48px;
-            color: #b8956a;
-            margin-bottom: 10px;
-            font-weight: 600;
+        .logo {
+            width: 180px;
+            height: auto;
         }
 
-        .stat-item p {
-            font-size: 16px;
-            color: #8b7355;
-        }
-
-        /* Products Grid */
-        .products {
-            padding: 100px 40px;
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 30px;
             background: linear-gradient(135deg, #f5ebe0 0%, #fefdf8 100%);
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'Forum', serif;
+            font-size: 56px;
+            color: #b8956a;
+            margin-bottom: 20px;
+            letter-spacing: 8px;
+            font-weight: 400;
+        }
+
+        .tagline {
+            font-size: 24px;
+            color: #8b7355;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .product-image {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            margin: 50px auto;
+        }
+
+        /* Dual Filling Section */
+        .dual-filling {
+            padding: 100px 30px;
+            background: #fefdf8;
         }
 
         .section-title {
             text-align: center;
+            font-size: 42px;
+            color: #6b5844;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: #8b7355;
             margin-bottom: 60px;
         }
 
-        .section-title h2 {
-            font-family: 'Cormorant', serif;
-            font-size: 48px;
-            color: #6b5844;
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
-            font-size: 18px;
-            color: #8b7355;
-        }
-
         .products-grid {
-            max-width: 1400px;
-            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
+            margin-top: 60px;
         }
 
         .product-card {
             background: white;
-            border-radius: 25px;
-            padding: 35px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(107, 88, 68, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(107, 88, 68, 0.1);
             transition: all 0.4s ease;
         }
 
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(184, 149, 106, 0.2);
+            box-shadow: 0 20px 60px rgba(107, 88, 68, 0.2);
         }
 
         .product-card img {
             width: 100%;
-            height: 250px;
+            height: 300px;
             object-fit: cover;
-            border-radius: 20px;
-            margin-bottom: 25px;
         }
 
-        .product-card h3 {
-            font-size: 22px;
+        .product-info {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .product-name {
+            font-size: 24px;
             color: #6b5844;
             margin-bottom: 15px;
+            font-weight: 600;
         }
 
-        .product-card p {
-            font-size: 15px;
+        .product-desc {
+            font-size: 16px;
             color: #8b7355;
-            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
-        /* Testimonials Section */
-        .testimonials {
-            padding: 100px 40px;
-            background: white;
+        /* Why Section */
+        .why-section {
+            padding: 100px 30px;
+            background: linear-gradient(135deg, #f5ebe0 0%, #fefdf8 100%);
         }
 
-        .testimonials-grid {
-            max-width: 1400px;
-            margin: 0 auto;
+        .why-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
 
-        .testimonial-card {
-            background: linear-gradient(135deg, #fefdf8 0%, #f5ebe0 100%);
-            border-radius: 25px;
-            padding: 40px;
-            position: relative;
+        .why-card {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 20px;
             box-shadow: 0 10px 30px rgba(107, 88, 68, 0.08);
             transition: all 0.4s ease;
         }
 
-        .testimonial-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(184, 149, 106, 0.15);
+        .why-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(107, 88, 68, 0.15);
         }
 
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 100px;
-            color: rgba(184, 149, 106, 0.1);
-            font-family: serif;
-        }
-
-        .stars {
-            color: #b8956a;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-text {
-            font-size: 16px;
-            color: #6b5844;
-            margin-bottom: 25px;
-            line-height: 1.8;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
+        .why-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
             border-radius: 50%;
-            background: linear-gradient(135deg, #b8956a, #c9a876);
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 40px;
             color: white;
+        }
+
+        .why-title {
             font-size: 20px;
+            color: #6b5844;
+            margin-bottom: 15px;
             font-weight: 600;
         }
 
-        .author-info h4 {
-            font-size: 16px;
-            color: #6b5844;
-            margin-bottom: 3px;
-        }
-
-        .author-info p {
-            font-size: 13px;
+        .why-desc {
+            font-size: 15px;
             color: #8b7355;
+            line-height: 1.6;
         }
 
-        /* Video/Gallery Section */
-        .gallery {
-            padding: 100px 40px;
-            background: linear-gradient(135deg, #e8d5c0 0%, #d4c4b0 100%);
-        }
-
-        .gallery-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .gallery-item {
-            border-radius: 20px;
-            overflow: hidden;
-            height: 280px;
-            position: relative;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .gallery-item:first-child {
-            grid-column: span 2;
-            grid-row: span 2;
-            height: auto;
-        }
-
-        /* FAQ Section */
-        .faq {
-            padding: 100px 40px;
-            background: white;
-        }
-
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
+        /* Order Now Section */
+        .order-section {
+            padding: 100px 30px;
             background: #fefdf8;
-            border-radius: 15px;
-            padding: 25px 30px;
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            text-align: center;
         }
 
-        .faq-item:hover {
-            background: #f5ebe0;
-        }
-
-        .faq-question {
+        .order-buttons {
             display: flex;
-            justify-content: space-between;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .order-btn {
+            display: inline-flex;
             align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: white;
+            color: #6b5844;
+            border: 2px solid #b8956a;
+            border-radius: 50px;
             font-size: 18px;
             font-weight: 500;
-            color: #6b5844;
-        }
-
-        .faq-question i {
-            color: #b8956a;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            color: #8b7355;
-            line-height: 1.8;
-            padding-top: 0;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding-top: 20px;
-        }
-
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-
-        /* Social Proof */
-        .social-proof {
-            padding: 80px 40px;
-            background: linear-gradient(135deg, #6b5844 0%, #8b7355 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .instagram-grid {
-            max-width: 1200px;
-            margin: 50px auto 0;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 15px;
-        }
-
-        .insta-item {
-            aspect-ratio: 1;
-            border-radius: 15px;
-            overflow: hidden;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            text-decoration: none;
         }
 
-        .insta-item:hover {
-            transform: scale(1.1);
+        .order-btn:hover {
+            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(184, 149, 106, 0.3);
         }
 
-        .insta-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 120px 40px;
-            background: linear-gradient(135deg, #e8d5c0 0%, #d4c4b0 100%);
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-family: 'Cormorant', serif;
-            font-size: 52px;
-            color: #6b5844;
-            margin-bottom: 25px;
-        }
-
-        .cta-section p {
+        .order-btn i {
             font-size: 22px;
-            color: #8b7355;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b8956a;
+            font-size: 28px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(107, 88, 68, 0.1);
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
+            color: white;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(184, 149, 106, 0.3);
+        }
+
+        /* CTA Final Section */
+        .cta-final {
+            padding: 100px 30px;
+            background: linear-gradient(135deg, #6b5844 0%, #8b7355 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-final h2 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .cta-final p {
+            font-size: 20px;
             margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 22px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(184, 149, 106, 0.3);
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(184, 149, 106, 0.5);
         }
 
         /* Footer */
         .footer {
-            background: #6b5844;
-            color: white;
-            padding: 80px 40px 40px;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 50px;
-        }
-
-        .footer-about h3 {
-            font-family: 'Forum', serif;
-            font-size: 32px;
-            color: #b8956a;
-            margin-bottom: 20px;
-            letter-spacing: 6px;
-        }
-
-        .footer-about p {
-            line-height: 1.8;
-            opacity: 0.9;
-        }
-
-        .footer-links h4 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #c9a876;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links ul li a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links ul li a:hover {
-            color: #b8956a;
-            padding-right: 5px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            background: #b8956a;
-            transform: translateY(-5px);
-        }
-
-        .footer-bottom {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.8;
+            padding: 50px 30px;
+            background: #6b5844;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
         }
+
+        .footer-logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .product-card { animation: slideIn 0.6s ease; }
+        
 
         /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .products-grid,
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
         @media (max-width: 768px) {
-            .nav {
-                display: none;
+            h1 {
+                font-size: 36px;
+                letter-spacing: 4px;
             }
 
-            .hero-text h1 {
-                font-size: 42px;
+            .tagline {
+                font-size: 18px;
             }
 
-            .stats-grid,
-            .products-grid,
-            .testimonials-grid {
+            .section-title {
+                font-size: 32px;
+            }
+
+            .products-grid {
                 grid-template-columns: 1fr;
             }
 
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .gallery-item:first-child {
-                grid-column: span 2;
-                grid-row: span 1;
-            }
-
-            .instagram-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .footer-content {
+            .why-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .order-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .order-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .cta-final h2 {
+                font-size: 32px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Modern Header -->
+    <!-- Header -->
     <header class="header">
-        <div class="header-content">
-            <img src="logo.webp" alt="LA FONCIA" class="logo-img">
-            <nav class="nav">
-                <a href="#products">المنتجات</a>
-                <a href="#testimonials">الآراء</a>
-                <a href="#gallery">المعرض</a>
-                <a href="#faq">الأسئلة</a>
-            </nav>
-            <a href="#order" class="btn-primary" style="padding: 12px 30px; font-size: 16px;">
-                <i class="fas fa-shopping-cart"></i>
-                اطلب الآن
-            </a>
-        </div>
+        <img src="logo.webp" alt="LA FONCIA" class="logo">
     </header>
 
-    <!-- Modern Hero -->
-    <section class="hero-modern">
-        <div class="hero-grid">
-            <div class="hero-text">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
                 <h1>LA FONCIA</h1>
-                <p class="subtitle">حين تتحول الشوكولاتة إلى تجربة فاخرة</p>
-                <p>
-                    اكتشف عالماً من النكهات المتناغمة. كل قطعة شوكولاتة في بوكساتنا تحمل حشوتين مختلفتين،
-                    مزيج فريد يأخذك في رحلة من المذاق الاستثنائي.
+                <p class="tagline">حين تتحول الشوكولاتة إلى تجربة فاخرة</p>
+                <img src="in-banner-Photoroom.png" alt="LA FONCIA Chocolates" class="product-image">
+                <p style="font-size: 20px; color: #8b7355; margin-top: 30px;">
+                    اكتشف غابتنا من الخيارات المتنوعة
                 </p>
-                <div class="hero-buttons">
-                    <a href="#products" class="btn-primary">
-                        <i class="fas fa-gift"></i>
-                        اطلب بوكسك الفاخر
-                    </a>
-                    <a href="#gallery" class="btn-secondary">
-                        <i class="fas fa-play"></i>
-                        شاهد المزيد
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="in-banner-Photoroom.png" alt="LA FONCIA Premium Chocolates">
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3><span class="counter">5000</span>+</h3>
-                <p>عميل سعيد</p>
-            </div>
-            <div class="stat-item">
-                <h3><span class="counter">15</span>+</h3>
-                <p>نكهة مختلفة</p>
-            </div>
-            <div class="stat-item">
-                <h3><span class="counter">100</span>%</h3>
-                <p>مكونات طبيعية</p>
-            </div>
-            <div class="stat-item">
-                <h3><span class="counter">24</span>h</h3>
-                <p>توصيل سريع</p>
-            </div>
-        </div>
-    </section>
+    <!-- Dual Filling Section -->
+    <section class="dual-filling">
+        <div class="container">
+            <h2 class="section-title">الحشوة المزدوجة - تجربة فريدة في كل قطعة</h2>
+            <p class="section-subtitle">كل قطعة شوكولاتة في بوكساتنا تحتوي على حشوتين مختلفتين، لتجربة مدهش استثنائية وممتعة بطعمك</p>
 
-    <!-- Products Section -->
-    <section class="products" id="products">
-        <div class="section-title">
-            <h2>تشكيلتنا الفاخرة</h2>
-            <p>اختر من بين مجموعة متنوعة من النكهات الاستثنائية</p>
-        </div>
-        <div class="products-grid">
-            <div class="product-card">
-                <img src="image-choc-3.webp" alt="كراميل ذائب">
-                <h3>شوكولاتة بحشوة الكراميل الذائب</h3>
-                <p>توازن فاخر بين مرارة الشوكولاتة ونعومة الكراميل الطبيعي</p>
-                <a href="#order" class="btn-primary" style="padding: 12px 30px; font-size: 15px;">اطلب الآن</a>
-            </div>
-            <div class="product-card">
-                <img src="image-choco.webp" alt="توت طبيعي">
-                <h3>شوكولاتة بحشوة التوت الطبيعي</h3>
-                <p>لمسة فاكهية منعشة تتناغم مع نعومة الشوكولاتة البلجيكية</p>
-                <a href="#order" class="btn-primary" style="padding: 12px 30px; font-size: 15px;">اطلب الآن</a>
-            </div>
-            <div class="product-card">
-                <img src="image-five.webp" alt="فستق كريمي">
-                <h3>شوكولاتة بحشوة الفستق الكريمي</h3>
-                <p>فستق فاخر محمّص مطحون بقوام كريمي غني ومميز</p>
-                <a href="#order" class="btn-primary" style="padding: 12px 30px; font-size: 15px;">اطلب الآن</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="section-title">
-            <h2>ماذا يقول عملاؤنا</h2>
-            <p>تجارب حقيقية من عشاق LA FONCIA</p>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    أفضل شوكولاتة جربتها في حياتي! الحشوة المزدوجة فكرة عبقرية، كل قطعة مليئة بالمفاجآت.
-                    التغليف أنيق جداً وجاهز للإهداء مباشرة.
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">س</div>
-                    <div class="author-info">
-                        <h4>سارة المالكي</h4>
-                        <p>الرياض، السعودية</p>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="image-choc-3.webp" alt="كراميل دابل">
+                    <div class="product-info">
+                        <h3 class="product-name">كراميل دابل</h3>
+                        <p class="product-desc">توت كرانش بحشوة كراميل طبقة مثالية داخلية استثنائية مع الكراميل السائل الكراميل</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    طعم لا يُقاوم! الجودة واضحة في كل قضمة. أهديتها لأصدقائي وكانوا في غاية السعادة.
-                    سأطلبها مرة أخرى بكل تأكيد.
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">أ</div>
-                    <div class="author-info">
-                        <h4>أحمد العتيبي</h4>
-                        <p>جدة، السعودية</p>
+                <div class="product-card">
+                    <img src="image-five.webp" alt="فستق كرانشي">
+                    <div class="product-info">
+                        <h3 class="product-name">فستق كرانشي</h3>
+                        <p class="product-desc">مبس وشي زبدة الفستق، نحاول تفصل في رقي وتألق أفضل الاحتياجات المتنوعة والممتعة التجربة الشغفية</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    تجربة فاخرة من البداية للنهاية. من التغليف الراقي إلى الطعم الرائع.
-                    LA FONCIA تستحق لقب الشوكولاتة الفاخرة بجدارة!
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">ن</div>
-                    <div class="author-info">
-                        <h4>نورة القحطاني</h4>
-                        <p>الدمام، السعودية</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    الحشوات طبيعية ومذاقها رائع! أنا من عشاق الشوكولاتة وهذه حقاً مميزة.
-                    التوصيل كان سريع والمنتج وصل بحالة ممتازة.
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">خ</div>
-                    <div class="author-info">
-                        <h4>خالد الشمري</h4>
-                        <p>المدينة المنورة</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    طلبتها هدية لزوجتي وأحبتها جداً! الفكرة المبتكرة للحشوة المزدوجة تعطي تجربة مذاق فريدة.
-                    شكراً LA FONCIA على هذا المنتج الرائع.
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">م</div>
-                    <div class="author-info">
-                        <h4>محمد الغامدي</h4>
-                        <p>أبها، السعودية</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">
-                    البوكس يجنن! التصميم فخم والشوكولاتة لذيذة جداً. استخدمتها كهدايا في مناسبة خاصة
-                    وكل الحضور أعجبوا بها. تستحق 5 نجوم!
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">ل</div>
-                    <div class="author-info">
-                        <h4>ليلى الدوسري</h4>
-                        <p>الخبر، السعودية</p>
+                <div class="product-card">
+                    <img src="image-choco.webp" alt="نوت طبقة">
+                    <div class="product-info">
+                        <h3 class="product-name">نوت طبقة</h3>
+                        <p class="product-desc">استخدم عائلتي الشهي الاحتياجات فريد فنيتي أحاستيك طعموا طبقة مع الكراميل السائل الكريمي فخري أعماق</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="section-title">
-            <h2 style="color: #6b5844;">معرض الصور</h2>
-            <p style="color: #8b7355;">شاهد جمال منتجاتنا</p>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="in-banner-Photoroom.png" alt="LA FONCIA Box">
-            </div>
-            <div class="gallery-item">
-                <img src="image-choc-3.webp" alt="Chocolate 1">
-            </div>
-            <div class="gallery-item">
-                <img src="image-choco.webp" alt="Chocolate 2">
-            </div>
-            <div class="gallery-item">
-                <img src="image-five.webp" alt="Chocolate 3">
-            </div>
-            <div class="gallery-item">
-                <img src="logo.webp" alt="Logo" style="object-fit: contain; background: white;">
-            </div>
-            <div class="gallery-item">
-                <img src="image-choc-3.webp" alt="Chocolate Detail">
-            </div>
-            <div class="gallery-item">
-                <img src="image-choco.webp" alt="Chocolate Detail">
-            </div>
-        </div>
-    </section>
+    <!-- Why LA FONCIA Section -->
+    <section class="why-section">
+        <div class="container">
+            <h2 class="section-title">؟LA FONCIA لماذا</h2>
+            <p class="section-subtitle">نقدم لكم أجود تجربة فريدة تجمع بين الجودة والمذاق والتغليف في كل قطعة</p>
 
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-        <div class="section-title">
-            <h2>الأسئلة الشائعة</h2>
-            <p>إجابات على أكثر الأسئلة تكراراً</p>
-        </div>
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>ما هي الحشوة المزدوجة؟</span>
-                    <i class="fas fa-chevron-down"></i>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="why-title">تجربة فاخرة من أول نظرة حتى آخر قضمة</h3>
+                    <p class="why-desc">كل التفاصيل المميزة معتنية بيها، لإعطائكم وتأكيد تسجل مميز أنيقا لماما شوارع</p>
                 </div>
-                <div class="faq-answer">
-                    الحشوة المزدوجة تعني أن كل قطعة شوكولاتة تحتوي على نوعين مختلفين من الحشوات الطبيعية،
-                    مما يمنحك تجربة مذاق متعددة الطبقات وفريدة من نوعها.
-                </div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>هل المكونات طبيعية 100%؟</span>
-                    <i class="fas fa-chevron-down"></i>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-glasses"></i>
+                    </div>
+                    <h3 class="why-title">بوكسات جاهزة للإهداء</h3>
+                    <p class="why-desc">أطقم عالقي زاهية فائقة زملائك، بعبل تن رقيمي المستحق ننتفى خاصية دايم الضحكة</p>
                 </div>
-                <div class="faq-answer">
-                    نعم، نستخدم فقط المكونات الطبيعية عالية الجودة والشوكولاتة البلجيكية الأصلية الفاخرة
-                    في جميع منتجاتنا.
-                </div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>كم مدة التوصيل؟</span>
-                    <i class="fas fa-chevron-down"></i>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="why-title">مكونات عالية الجودة</h3>
+                    <p class="why-desc">استخدم عاجز أتميل الاحتياجات الإرثاب والشوكولاتة للحصول دون الجودة تضبط أعماق</p>
                 </div>
-                <div class="faq-answer">
-                    التوصيل يتم خلال 24-48 ساعة لجميع مناطق المملكة. نحرص على وصول المنتج بأفضل حالة
-                    مع التغليف المناسب للحفاظ على الجودة.
-                </div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>هل البوكس جاهز للإهداء؟</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    بكل تأكيد! كل بوكس يأتي بتغليف فاخر وأنيق جاهز للإهداء مباشرة دون الحاجة لأي تغليف إضافي،
-                    مع إمكانية إضافة بطاقة تهنئة شخصية.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>كيف أحافظ على الشوكولاتة؟</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    يُفضل حفظ الشوكولاتة في مكان بارد وجاف بعيداً عن أشعة الشمس المباشرة.
-                    يمكن حفظها في الثلاجة لكن يجب إخراجها قبل التناول بـ 10-15 دقيقة للاستمتاع بأفضل مذاق.
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="why-title">مكبس متنوعة في القطعة الواحدة</h3>
+                    <p class="why-desc">تنوعا فعقد رقم جريد منافس جودة أنواع الصدود مع متعددة الاحتياجات والتناسبية الضحكة</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Proof -->
-    <section class="social-proof">
-        <h2 style="font-family: 'Cormorant', serif; font-size: 42px; margin-bottom: 20px;">تابعنا على إنستقرام</h2>
-        <p style="font-size: 18px; opacity: 0.9; margin-bottom: 20px;">@lafoncia.sa</p>
-        <div class="instagram-grid">
-            <div class="insta-item"><img src="image-choc-3.webp" alt="Instagram Post"></div>
-            <div class="insta-item"><img src="image-choco.webp" alt="Instagram Post"></div>
-            <div class="insta-item"><img src="image-five.webp" alt="Instagram Post"></div>
-            <div class="insta-item"><img src="in-banner-Photoroom.png" alt="Instagram Post"></div>
-            <div class="insta-item"><img src="image-choc-3.webp" alt="Instagram Post"></div>
-            <div class="insta-item"><img src="image-choco.webp" alt="Instagram Post"></div>
+    <!-- Order Now Section -->
+    <section class="order-section">
+        <div class="container">
+            <h2 class="section-title">LA FONCIA اطلب الآن</h2>
+            <p class="section-subtitle">اختر طريقتك المفضلة للطلب واستمتع بتجربة التوصيل السريع</p>
+
+            <div class="order-buttons">
+                <a href="https://wa.me/966501234567" class="order-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    تواصل عبر واتساب
+                </a>
+
+                <a href="#" class="order-btn">
+                    <i class="fas fa-map-marker-alt"></i>
+                    مواقعنا الجغرافية
+                </a>
+
+                <a href="#" class="order-btn">
+                    <i class="fas fa-shipping-fast"></i>
+                    الطلب من تطبيقات التوصيل
+                </a>
+            </div>
+
+            <div class="social-icons">
+                <a href="#" class="social-icon">
+                    <i class="fab fa-snapchat-ghost"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://twitter.com/lafoncia" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/lafoncia.sa" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" id="order">
-        <h2>جرّب LA FONCIA اليوم</h2>
-        <p>اطلب بوكسك الفاخر واستمتع بتجربة شوكولاتة استثنائية</p>
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-            <a href="https://wa.me/966501234567" class="btn-primary" style="padding: 20px 50px; font-size: 20px;">
-                <i class="fab fa-whatsapp"></i>
-                اطلب عبر واتساب
-            </a>
-            <a href="#products" class="btn-secondary" style="padding: 20px 50px; font-size: 20px;">
-                <i class="fas fa-gift"></i>
-                شاهد المنتجات
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>هل أنت مستعد للتجربة؟</h2>
+            <p>LA FONCIA حين نتحول الشوكولاتة إلى أسلوب دفوق</p>
+            <a href="https://wa.me/966501234567" class="cta-button">
+                <i class="fas fa-shopping-bag"></i>
+                اطلب بوكس LA FONCIA الفاخر الآن
             </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-about">
-                <h3>LA FONCIA</h3>
-                <p>
-                    نقدم لكم أفضل أنواع الشوكولاتة البلجيكية الفاخرة المحشوة بعناية.
-                    كل قطعة هي تحفة فنية تجمع بين الجودة والفخامة والابتكار.
-                </p>
-                <div class="footer-social">
-                    <a href="https://www.instagram.com/lafoncia.sa" class="social-icon" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-snapchat"></i>
-                    </a>
-                    <a href="https://wa.me/966501234567" class="social-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-links">
-                <h4>روابط سريعة</h4>
-                <ul>
-                    <li><a href="#products">المنتجات</a></li>
-                    <li><a href="#testimonials">آراء العملاء</a></li>
-                    <li><a href="#gallery">المعرض</a></li>
-                    <li><a href="#faq">الأسئلة الشائعة</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-links">
-                <h4>خدماتنا</h4>
-                <ul>
-                    <li><a href="#">التوصيل السريع</a></li>
-                    <li><a href="#">تغليف الهدايا</a></li>
-                    <li><a href="#">طلبات خاصة</a></li>
-                    <li><a href="#">المناسبات</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-links">
-                <h4>تواصل معنا</h4>
-                <ul>
-                    <li><a href="https://wa.me/966501234567">واتساب</a></li>
-                    <li><a href="mailto:info@lafoncia.sa">البريد الإلكتروني</a></li>
-                    <li><a href="#">الموقع الجغرافي</a></li>
-                    <li><a href="#">الدعم الفني</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2024 LA FONCIA - جميع الحقوق محفوظة | صُنع بحب في المملكة العربية السعودية ❤️</p>
-        </div>
+        <img src="logo.webp" alt="LA FONCIA" class="footer-logo">
+        <p>نحن لكم أفضل أنواع الشوكولاتة البلجيكية الفاخرة، شال كل قطعة هي تحفة فنية تجمع بين الجودة والمذاق والتغليف</p>
+        <p style="margin-top: 20px;">&copy; 2024 LA FONCIA - جميع الحقوق محفوظة | صنع بكل حب في المملكة العربية السعودية 🇸🇦</p>
     </footer>
-
-    <script>
-        // FAQ Toggle
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if(target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Counter Animation
-        const counters = document.querySelectorAll('.counter');
-        counters.forEach(counter => {
-            const target = parseInt(counter.textContent);
-            let count = 0;
-            const interval = setInterval(() => {
-                count += Math.ceil(target / 50);
-                if (count >= target) {
-                    counter.textContent = target;
-                    clearInterval(interval);
-                } else {
-                    counter.textContent = count;
-                }
-            }, 30);
-        });
-
-        // Header Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 30px rgba(107, 88, 68, 0.15)';
-            } else {
-                header.style.boxShadow = '0 2px 30px rgba(107, 88, 68, 0.08)';
-            }
-        });
-    </script>
 </body>
 </html>
