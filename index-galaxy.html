@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA FONCIA - تجربة شوكولاتة من المستقبل</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #0a0a0a 0%, #1a1410 50%, #0a0a0a 100%);
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #b8956a;
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleFloat linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) translateX(0);
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) translateX(100px);
+            }
+        }
+
+        /* Header - Logo Only */
+        .header-galaxy {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 30px 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(184, 149, 106, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .header-galaxy.scrolled {
+            padding: 20px 0;
+            background: rgba(10, 10, 10, 0.95);
+        }
+
+        .logo-container-galaxy {
+            text-align: center;
+        }
+
+        .logo-galaxy {
+            height: 70px;
+            filter: drop-shadow(0 0 20px rgba(184, 149, 106, 0.3));
+            transition: all 0.3s ease;
+        }
+
+        .logo-galaxy:hover {
+            filter: drop-shadow(0 0 30px rgba(184, 149, 106, 0.6));
+            transform: scale(1.05);
+        }
+
+        /* Hero Galaxy Style */
+        .hero-galaxy {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 150px 40px 100px;
+            overflow: hidden;
+        }
+
+        .glow-circle {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(184, 149, 106, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulseGlow 6s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        .hero-content-galaxy {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text-galaxy {
+            opacity: 0;
+            animation: slideInRight 1s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .tech-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, rgba(184, 149, 106, 0.2), rgba(201, 168, 118, 0.1));
+            border: 1px solid rgba(184, 149, 106, 0.3);
+            border-radius: 30px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #b8956a;
+            margin-bottom: 30px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(184, 149, 106, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(184, 149, 106, 0);
+            }
+        }
+
+        .hero-galaxy h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 80px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #b8956a 0%, #d4c4b0 50%, #b8956a 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            letter-spacing: 5px;
+            animation: shimmerText 3s linear infinite;
+        }
+
+        @keyframes shimmerText {
+            0% {
+                background-position: 0% center;
+            }
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .hero-galaxy .tagline {
+            font-size: 24px;
+            color: #d4c4b0;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-galaxy .description {
+            font-size: 17px;
+            color: #a8a8a8;
+            line-height: 1.9;
+            margin-bottom: 50px;
+        }
+
+        .cta-galaxy {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 45px;
+            background: linear-gradient(135deg, #b8956a, #c9a876);
+            color: #0a0a0a;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(184, 149, 106, 0.3);
+        }
+
+        .cta-galaxy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-galaxy:hover::before {
+            left: 100%;
+        }
+
+        .cta-galaxy:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(184, 149, 106, 0.5);
+        }
+
+        .hero-image-galaxy {
+            position: relative;
+            opacity: 0;
+            animation: slideInLeft 1s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .product-showcase-galaxy {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .product-showcase-galaxy img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 30px 60px rgba(184, 149, 106, 0.4));
+            transition: all 0.6s ease;
+        }
+
+        .product-showcase-galaxy:hover img {
+            transform: rotateY(5deg) rotateX(5deg) scale(1.05);
+        }
+
+        /* Features Galaxy */
+        .features-galaxy {
+            padding: 120px 40px;
+            position: relative;
+        }
+
+        .section-title-galaxy {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title-galaxy h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #b8956a, #d4c4b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .section-title-galaxy p {
+            font-size: 18px;
+            color: #a8a8a8;
+        }
+
+        .features-grid-galaxy {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-card-galaxy {
+            background: linear-gradient(135deg, rgba(184, 149, 106, 0.05), rgba(26, 20, 16, 0.5));
+            border: 1px solid rgba(184, 149, 106, 0.2);
+            border-radius: 20px;
+            padding: 50px 35px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card-galaxy::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(184, 149, 106, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .feature-card-galaxy:hover::before {
+            left: 50%;
+        }
+
+        .feature-card-galaxy:hover {
+            border-color: rgba(184, 149, 106, 0.5);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(184, 149, 106, 0.2);
+        }
+
+        .feature-icon-galaxy {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, rgba(184, 149, 106, 0.2), rgba(201, 168, 118, 0.1));
+            border: 2px solid rgba(184, 149, 106, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            color: #b8956a;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card-galaxy h3 {
+            font-size: 22px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card-galaxy p {
+            font-size: 15px;
+            color: #a8a8a8;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Products Carousel */
+        .products-galaxy {
+            padding: 120px 40px;
+            background: rgba(26, 20, 16, 0.3);
+        }
+
+        .products-scroll {
+            max-width: 1600px;
+            margin: 80px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+
+        .product-card-galaxy {
+            background: rgba(10, 10, 10, 0.6);
+            border: 1px solid rgba(184, 149, 106, 0.2);
+            border-radius: 25px;
+            padding: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .product-card-galaxy:hover {
+            border-color: rgba(184, 149, 106, 0.6);
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(184, 149, 106, 0.3);
+        }
+
+        .product-image-galaxy {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image-galaxy img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card-galaxy:hover .product-image-galaxy img {
+            transform: scale(1.1);
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(10, 10, 10, 0.8) 100%);
+        }
+
+        .product-info-galaxy {
+            padding: 30px;
+        }
+
+        .product-info-galaxy h3 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .product-info-galaxy p {
+            font-size: 15px;
+            color: #a8a8a8;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .product-specs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .spec-badge {
+            padding: 6px 15px;
+            background: rgba(184, 149, 106, 0.1);
+            border: 1px solid rgba(184, 149, 106, 0.3);
+            border-radius: 20px;
+            font-size: 12px;
+            color: #b8956a;
+            letter-spacing: 0.5px;
+        }
+
+        /* Tech Specs Section */
+        .tech-specs {
+            padding: 120px 40px;
+            background: #0a0a0a;
+        }
+
+        .specs-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            background: linear-gradient(135deg, rgba(184, 149, 106, 0.05), rgba(26, 20, 16, 0.5));
+            border: 1px solid rgba(184, 149, 106, 0.2);
+            border-radius: 30px;
+            padding: 60px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: rgba(10, 10, 10, 0.5);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .spec-item:hover {
+            background: rgba(184, 149, 106, 0.05);
+        }
+
+        .spec-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #b8956a, #c9a876);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #0a0a0a;
+            flex-shrink: 0;
+        }
+
+        .spec-content h4 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .spec-content p {
+            font-size: 14px;
+            color: #a8a8a8;
+            line-height: 1.7;
+        }
+
+        /* CTA Section Galaxy */
+        .cta-section-galaxy {
+            padding: 120px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section-galaxy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(184, 149, 106, 0.1) 0%, transparent 70%);
+        }
+
+        .cta-content-galaxy {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content-galaxy h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #b8956a, #d4c4b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+        }
+
+        .cta-content-galaxy p {
+            font-size: 20px;
+            color: #a8a8a8;
+            margin-bottom: 50px;
+        }
+
+        /* Footer Galaxy - Logo Only */
+        .footer-galaxy {
+            padding: 80px 40px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(184, 149, 106, 0.1);
+        }
+
+        .footer-logo-galaxy {
+            height: 80px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 15px rgba(184, 149, 106, 0.2));
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: #6b5844;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content-galaxy,
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid-galaxy,
+            .products-scroll {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-galaxy h1 {
+                font-size: 48px;
+            }
+
+            .section-title-galaxy h2 {
+                font-size: 36px;
+            }
+
+            .features-grid-galaxy,
+            .products-scroll {
+                grid-template-columns: 1fr;
+            }
+
+            .specs-container {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Header - Logo Only -->
+    <header class="header-galaxy" id="header">
+        <div class="logo-container-galaxy">
+            <img src="logo.webp" alt="LA FONCIA" class="logo-galaxy">
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-galaxy">
+        <div class="glow-circle"></div>
+        <div class="hero-content-galaxy">
+            <div class="hero-text-galaxy">
+                <div class="tech-badge">Innovation in Chocolate</div>
+                <h1>LA FONCIA</h1>
+                <p class="tagline">تجربة شوكولاتة من جيل جديد</p>
+                <p class="description">
+                    تقنية الحشوة المزدوجة المبتكرة تلتقي مع الشوكولاتة البلجيكية الفاخرة.
+                    كل قطعة مصممة بدقة لتقدم لك تجربة حسية متعددة الأبعاد لم تختبرها من قبل.
+                </p>
+                <a href="#products" class="cta-galaxy">
+                    <span>اكتشف المجموعة</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+            <div class="hero-image-galaxy">
+                <div class="product-showcase-galaxy">
+                    <img src="in-banner-Photoroom.png" alt="LA FONCIA">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-galaxy">
+        <div class="section-title-galaxy">
+            <h2>التقنية المتقدمة</h2>
+            <p>ابتكارات تعيد تعريف تجربة الشوكولاتة</p>
+        </div>
+        <div class="features-grid-galaxy">
+            <div class="feature-card-galaxy">
+                <div class="feature-icon-galaxy">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3>تقنية الحشوة المزدوجة</h3>
+                <p>نظام فريد يجمع بين حشوتين طبيعيتين في قطعة واحدة، مصمم بدقة هندسية لضمان التوازن المثالي</p>
+            </div>
+
+            <div class="feature-card-galaxy">
+                <div class="feature-icon-galaxy">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <h3>مكونات نقية 100%</h3>
+                <p>شوكولاتة بلجيكية أصلية معالجة بأحدث التقنيات للحفاظ على جودتها ونقاوتها الفائقة</p>
+            </div>
+
+            <div class="feature-card-galaxy">
+                <div class="feature-icon-galaxy">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <h3>تصميم هندسي دقيق</h3>
+                <p>كل قطعة مصممة بدقة متناهية لتوفير تجربة بصرية وحسية استثنائية</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-galaxy" id="products">
+        <div class="section-title-galaxy">
+            <h2>المجموعة الفاخرة</h2>
+            <p>اختر تجربتك المفضلة</p>
+        </div>
+        <div class="products-scroll">
+            <div class="product-card-galaxy">
+                <div class="product-image-galaxy">
+                    <img src="image-choc-3.webp" alt="Caramel Edition">
+                    <div class="product-overlay"></div>
+                </div>
+                <div class="product-info-galaxy">
+                    <h3>Caramel Edition</h3>
+                    <p>شوكولاتة داكنة فاخرة بتقنية الكراميل الذائب المتطورة</p>
+                    <div class="product-specs">
+                        <span class="spec-badge">Belgian</span>
+                        <span class="spec-badge">Dual-Fill</span>
+                    </div>
+                    <a href="#order" class="cta-galaxy" style="width: 100%; justify-content: center;">
+                        اطلب الآن
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card-galaxy">
+                <div class="product-image-galaxy">
+                    <img src="image-choco.webp" alt="Berry Edition">
+                    <div class="product-overlay"></div>
+                </div>
+                <div class="product-info-galaxy">
+                    <h3>Berry Edition</h3>
+                    <p>تقنية دمج التوت الطبيعي مع الشوكولاتة الفاخرة</p>
+                    <div class="product-specs">
+                        <span class="spec-badge">Natural</span>
+                        <span class="spec-badge">Premium</span>
+                    </div>
+                    <a href="#order" class="cta-galaxy" style="width: 100%; justify-content: center;">
+                        اطلب الآن
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card-galaxy">
+                <div class="product-image-galaxy">
+                    <img src="image-five.webp" alt="Pistachio Edition">
+                    <div class="product-overlay"></div>
+                </div>
+                <div class="product-info-galaxy">
+                    <h3>Pistachio Edition</h3>
+                    <p>فستق فاخر معالج بتقنيات متقدمة للحصول على قوام كريمي مثالي</p>
+                    <div class="product-specs">
+                        <span class="spec-badge">Luxury</span>
+                        <span class="spec-badge">Creamy</span>
+                    </div>
+                    <a href="#order" class="cta-galaxy" style="width: 100%; justify-content: center;">
+                        اطلب الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Specs -->
+    <section class="tech-specs">
+        <div class="section-title-galaxy">
+            <h2>المواصفات التقنية</h2>
+            <p>تفاصيل الجودة الفائقة</p>
+        </div>
+        <div class="specs-container">
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="spec-content">
+                        <h4>شوكولاتة بلجيكية أصلية</h4>
+                        <p>مستوردة من أفضل المصانع البلجيكية المعتمدة عالمياً مع شهادات الجودة الدولية</p>
+                    </div>
+                </div>
+
+                <div class="spec-item">
+                    <div class="spec-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="spec-content">
+                        <h4>حشوات طبيعية 100%</h4>
+                        <p>جميع الحشوات من مصادر طبيعية دون إضافات صناعية أو مواد حافظة</p>
+                    </div>
+                </div>
+
+                <div class="spec-item">
+                    <div class="spec-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <div class="spec-content">
+                        <h4>تغليف فاخر متطور</h4>
+                        <p>تصميم عصري بمواد عالية الجودة، جاهز للإهداء مباشرة</p>
+                    </div>
+                </div>
+
+                <div class="spec-item">
+                    <div class="spec-icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <div class="spec-content">
+                        <h4>توصيل سريع محمي</h4>
+                        <p>نظام توصيل متطور يضمن وصول المنتج بأفضل حالة خلال 24-48 ساعة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section-galaxy" id="order">
+        <div class="cta-content-galaxy">
+            <h2>جرّب المستقبل اليوم</h2>
+            <p>اطلب LA FONCIA واختبر تجربة شوكولاتة لم تعهدها من قبل</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/966501234567" class="cta-galaxy" style="padding: 20px 50px; font-size: 18px;">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>اطلب عبر واتساب</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Logo Only -->
+    <footer class="footer-galaxy">
+        <img src="logo.webp" alt="LA FONCIA" class="footer-logo-galaxy">
+        <p class="footer-text">© 2024 LA FONCIA - Innovation in Chocolate | صُنع بتقنية متقدمة في المملكة العربية السعودية</p>
+    </footer>
+
+    <script>
+        // Create particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        createParticles();
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const glowCircle = document.querySelector('.glow-circle');
+            if (glowCircle) {
+                glowCircle.style.transform = `translate(-50%, -50%) translateY(${scrolled * 0.3}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
