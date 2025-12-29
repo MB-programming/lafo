@@ -121,23 +121,16 @@
             position: absolute;
             width: 35px;
             height: auto;
-            opacity: 0.3;
+            opacity: 0.15;
             animation: birdFloat 6s ease-in-out infinite;
             pointer-events: none;
             filter: drop-shadow(0 2px 8px rgba(184, 149, 106, 0.3));
         }
 
-        .header-bird.left {
-            left: -45px;
-            top: 50%;
-            transform: translateY(-50%) scaleX(-1);
-        }
-
-        .header-bird.right {
+        .header-bird.center {
             right: -45px;
             top: 50%;
             transform: translateY(-50%);
-            animation-delay: 3s;
         }
 
         @keyframes birdFloat {
@@ -496,24 +489,25 @@
             box-shadow: 0 25px 60px rgba(184, 149, 106, 0.2);
         }
 
-        .filling-icon {
-            width: 100px;
-            height: 100px;
+        .filling-image {
+            width: 100%;
+            height: 220px;
             margin: 0 auto 25px;
-            background: linear-gradient(135deg, #b8956a 0%, #c9a876 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 45px;
-            color: white;
+            border-radius: 20px;
+            overflow: hidden;
             box-shadow: 0 12px 30px rgba(184, 149, 106, 0.3);
             transition: all 0.4s ease;
         }
 
-        .filling-item:hover .filling-icon {
-            transform: scale(1.15) rotate(360deg);
-            box-shadow: 0 15px 40px rgba(184, 149, 106, 0.45);
+        .filling-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .filling-item:hover .filling-image img {
+            transform: scale(1.1);
         }
 
         .filling-item h3 {
@@ -1618,35 +1612,38 @@
         }
         
         .footer-content {
-            max-width: 1400px;
+            max-width: 900px;
             margin: 0 auto;
         }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 70px;
-            margin-bottom: 70px;
+
+        .footer-brand-center {
+            text-align: center;
+            margin-bottom: 50px;
         }
-        
-        .footer-brand h3 {
+
+        .footer-brand-center h3 {
             font-family: 'Forum', serif;
-            font-size: 34px;
-            letter-spacing: 10px;
+            font-size: 42px;
+            letter-spacing: 12px;
             margin-bottom: 25px;
             font-weight: 400;
+            color: #b8956a;
         }
-        
-        .footer-brand p {
-            font-size: 15px;
-            line-height: 1.9;
+
+        .footer-brand-center p {
+            font-size: 16px;
+            line-height: 2;
             opacity: 0.92;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .social-links {
             display: flex;
             gap: 18px;
+            justify-content: center;
         }
         
         .social-link {
@@ -1668,35 +1665,7 @@
             transform: translateY(-8px) rotate(360deg);
             box-shadow: 0 10px 25px rgba(184, 149, 106, 0.4);
         }
-        
-        .footer-section h4 {
-            font-size: 19px;
-            margin-bottom: 25px;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 15px;
-        }
-        
-        .footer-section ul li a {
-            color: rgba(255,255,255,0.85);
-            text-decoration: none;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        
-        .footer-section ul li a:hover {
-            color: #c9a876;
-            transform: translateX(8px);
-        }
-        
+
         .footer-bottom {
             padding-top: 35px;
             border-top: 1px solid rgba(255,255,255,0.15);
@@ -1817,10 +1786,6 @@
             .features-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
         
         @media (max-width: 768px) {
@@ -1836,11 +1801,7 @@
                 width: 25px;
             }
 
-            .header-bird.left {
-                left: -35px;
-            }
-
-            .header-bird.right {
+            .header-bird.center {
                 right: -35px;
             }
 
@@ -1963,12 +1924,7 @@
                 flex-direction: column;
                 align-items: center;
             }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 45px;
-            }
-            
+
             .floating-decoration,
             .cta-floating-icon {
                 display: none;
@@ -1989,9 +1945,8 @@
     <header class="header" id="mainHeader">
         <div class="header-content">
             <div class="logo-container">
-                <img src="single-bird.webp" alt="bird" class="header-bird left" loading="lazy">
                 <img src="logo.webp" alt="LA FONCIA Logo" class="logo-image">
-                <img src="single-bird.webp" alt="bird" class="header-bird right" loading="lazy">
+                <img src="single-bird.webp" alt="bird" class="header-bird center" loading="lazy">
             </div>
             <nav class="nav-menu">
                 <a href="#products" class="nav-link">المنتجات</a>
@@ -1999,9 +1954,9 @@
                 <a href="#features" class="nav-link">المميزات</a>
                 <a href="#delivery" class="nav-link">التوصيل</a>
             </nav>
-            <a href="https://wa.me/966501234567" class="contact-button" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-                <span>تواصل معنا</span>
+            <a href="#products" class="contact-button">
+                <i class="fas fa-shopping-cart"></i>
+                <span>طلب المنتج</span>
             </a>
         </div>
     </header>
@@ -2037,24 +1992,24 @@
 
             <div class="fillings-grid">
                 <div class="filling-item">
-                    <div class="filling-icon">
-                        <i class="fas fa-droplet"></i>
+                    <div class="filling-image">
+                        <img src="image-choc-3.webp" alt="كراميل ذائب" loading="lazy">
                     </div>
                     <h3>كراميل ذائب</h3>
                     <p>كراميل طبيعي فاخر بقوام كريمي ناعم يذوب في فمك، محضّر بعناية لإضفاء نكهة غنية ولذيذة</p>
                 </div>
 
                 <div class="filling-item">
-                    <div class="filling-icon">
-                        <i class="fas fa-leaf"></i>
+                    <div class="filling-image">
+                        <img src="image-choco.webp" alt="توت طبيعي" loading="lazy">
                     </div>
                     <h3>توت طبيعي</h3>
                     <p>توت طازج ممزوج بعناية لإضفاء لمسة فاكهية منعشة تتناغم مع نعومة الشوكولاتة البلجيكية</p>
                 </div>
 
                 <div class="filling-item">
-                    <div class="filling-icon">
-                        <i class="fas fa-seedling"></i>
+                    <div class="filling-image">
+                        <img src="image-five.webp" alt="فستق كريمي" loading="lazy">
                     </div>
                     <h3>فستق كريمي</h3>
                     <p>فستق فاخر محمّص مطحون بقوام كريمي غني، يمنحك طعماً مميزاً وتجربة لا تُنسى</p>
@@ -2358,63 +2313,31 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>LA FONCIA</h3>
-                    <p>
-                        نقدم لكم أفضل أنواع الشوكولاتة البلجيكية الفاخرة المحشوة بعناية. 
-                        كل قطعة هي تحفة فنية تجمع بين الجودة والفخامة والابتكار.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/lafoncia.sa" class="social-link" title="Instagram" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link" title="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="#" class="social-link" title="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" title="TikTok">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>روابط سريعة</h4>
-                    <ul>
-                        <li><a href="#products">المنتجات</a></li>
-                        <li><a href="#experience">التجربة</a></li>
-                        <li><a href="#features">المميزات</a></li>
-                        <li><a href="#delivery">التوصيل</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>خدماتنا</h4>
-                    <ul>
-                        <li><a href="#">طلبات الجملة</a></li>
-                        <li><a href="#">الإهداء المؤسسي</a></li>
-                        <li><a href="#">المناسبات الخاصة</a></li>
-                        <li><a href="#">التوصيل السريع</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>الدعم</h4>
-                    <ul>
-                        <li><a href="#">الأسئلة الشائعة</a></li>
-                        <li><a href="#">سياسة الاسترجاع</a></li>
-                        <li><a href="#">شروط الاستخدام</a></li>
-                        <li><a href="#">سياسة الخصوصية</a></li>
-                    </ul>
+            <div class="footer-brand-center">
+                <h3>LA FONCIA</h3>
+                <p>
+                    نقدم لكم أفضل أنواع الشوكولاتة البلجيكية الفاخرة المحشوة بعناية.
+                    كل قطعة هي تحفة فنية تجمع بين الجودة والفخامة والابتكار.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/lafoncia.sa" class="social-link" title="Instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>
-                    <i class="far fa-copyright"></i> 2024 LA FONCIA - جميع الحقوق محفوظة | 
+                    <i class="far fa-copyright"></i> 2024 LA FONCIA - جميع الحقوق محفوظة |
                     صُنع بحب في المملكة العربية السعودية
                     <i class="fas fa-heart" style="color: #c9a876;"></i>
                 </p>
