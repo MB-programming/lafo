@@ -1187,3 +1187,41 @@ function edupress_get_course_lessons($course_id) {
 
     return $lessons;
 }
+
+/**
+ * Format price using WooCommerce currency settings
+ */
+function edupress_format_price($price) {
+    // If WooCommerce is active, use its currency settings
+    if (edupress_is_woocommerce_active() && get_option('edupress_use_woo_currency', '1') == '1') {
+        if (is_numeric($price) && $price > 0) {
+            return wc_price($price);
+        } elseif ($price === '0' || $price === 0) {
+            return '<span class="free-price">' . __('مجاني', 'edupress') . '</span>';
+        } else {
+            return esc_html($price);
+        }
+    }
+
+    // Fallback: Use default format
+    if (is_numeric($price) && $price > 0) {
+        return '<span class="price-amount">' . number_format($price, 2) . ' ' . __('ريال', 'edupress') . '</span>';
+    } elseif ($price === '0' || $price === 0) {
+        return '<span class="free-price">' . __('مجاني', 'edupress') . '</span>';
+    } else {
+        return esc_html($price);
+    }
+}
+
+// ========================================
+// Include Additional Theme Components
+// ========================================
+
+// Include theme settings
+require_once get_template_directory() . '/inc/theme-settings.php';
+
+// Include Elementor support
+require_once get_template_directory() . '/inc/elementor-support.php';
+
+// Include shortcodes
+require_once get_template_directory() . '/inc/shortcodes/shortcodes.php';

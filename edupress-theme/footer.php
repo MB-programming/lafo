@@ -1,5 +1,6 @@
     </main><!-- #main -->
 
+    <?php if (!edupress_elementor_footer()) : ?>
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -32,7 +33,7 @@
 
             <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. جميع الحقوق محفوظة.</p>
+                <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. <?php echo esc_html(get_option('edupress_copyright', 'جميع الحقوق محفوظة.')); ?></p>
                 <?php if (has_nav_menu('footer')) : ?>
                     <nav class="footer-navigation">
                         <?php
@@ -48,6 +49,7 @@
             </div>
         </div>
     </footer>
+    <?php endif; ?>
 
 </div><!-- #page -->
 
