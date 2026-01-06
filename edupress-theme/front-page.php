@@ -141,7 +141,7 @@ if ($featured_courses->have_posts()) :
 
                         <div class="card-footer">
                             <span class="course-price">
-                                <?php echo $price ? esc_html($price) . (is_numeric($price) ? ' ريال' : '') : 'مجاني'; ?>
+                                <?php echo $price ? edupress_format_price($price) : edupress_format_price(0); ?>
                             </span>
                             <a href="<?php the_permalink(); ?>" class="btn btn-primary">
                                 عرض التفاصيل

@@ -138,7 +138,7 @@ get_header();
 
                             <div class="card-footer">
                                 <span class="course-price <?php echo (strtolower($price) === 'مجاني' || strtolower($price) === 'free') ? 'free' : ''; ?>">
-                                    <?php echo $price ? esc_html($price) . (is_numeric($price) ? ' ريال' : '') : 'مجاني'; ?>
+                                    <?php echo $price ? edupress_format_price($price) : edupress_format_price(0); ?>
                                 </span>
                                 <a href="<?php the_permalink(); ?>" class="btn btn-primary">
                                     عرض التفاصيل

@@ -220,10 +220,10 @@ while (have_posts()) : the_post();
                                     if ($product) {
                                         echo $product->get_price_html();
                                     } else {
-                                        echo $price ? esc_html($price) . (is_numeric($price) ? ' ريال' : '') : 'مجاني';
+                                        echo $price ? edupress_format_price($price) : edupress_format_price(0);
                                     }
                                 } else {
-                                    echo $price ? esc_html($price) . (is_numeric($price) ? ' ريال' : '') : 'مجاني';
+                                    echo $price ? edupress_format_price($price) : edupress_format_price(0);
                                 }
                                 ?>
                             </div>
