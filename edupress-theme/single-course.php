@@ -7,17 +7,37 @@
 
 get_header();
 
+// Check if user wants to access learning mode
+if (isset($_GET['learn']) && $_GET['learn'] == '1') {
+    include(get_template_directory() . '/course-learn.php');
+    exit;
+}
+
 while (have_posts()) : the_post();
-    $duration = get_post_meta(get_the_ID(), '_course_duration', true);
-    $students = get_post_meta(get_the_ID(), '_course_students', true);
-    $lessons = get_post_meta(get_the_ID(), '_course_lessons', true);
-    $price = get_post_meta(get_the_ID(), '_course_price', true);
-    $instructor_id = get_post_meta(get_the_ID(), '_course_instructor', true);
-    $video_url = get_post_meta(get_the_ID(), '_course_video', true);
-    $requirements = get_post_meta(get_the_ID(), '_course_requirements', true);
-    $objectives = get_post_meta(get_the_ID(), '_course_objectives', true);
-    $level_terms = get_the_terms(get_the_ID(), 'course_level');
-    $category_terms = get_the_terms(get_the_ID(), 'course_category');
+    $course_id = get_the_ID();
+    $duration = get_post_meta($course_id, '_course_duration', true);
+    $students = get_post_meta($course_id, '_course_students', true);
+    $lessons = get_post_meta($course_id, '_course_lessons', true);
+    $price = get_post_meta($course_id, '_course_price', true);
+    $instructor_id = get_post_meta($course_id, '_course_instructor', true);
+    $video_url = get_post_meta($course_id, '_course_video', true);
+    $requirements = get_post_meta($course_id, '_course_requirements', true);
+    $objectives = get_post_meta($course_id, '_course_objectives', true);
+    $level_terms = get_the_terms($course_id, 'course_level');
+    $category_terms = get_the_terms($course_id, 'course_category');
+    $product_id = get_post_meta($course_id, '_course_product_id', true);
+
+    // Check user access
+    $user_id = get_current_user_id();
+    $has_access = false;
+    $progress = 0;
+
+    if ($user_id) {
+        $has_access = edupress_user_has_course_access($user_id, $course_id);
+        if ($has_access) {
+            $progress = edupress_get_course_progress($user_id, $course_id);
+        }
+    }
 ?>
 
 <!-- Course Hero -->
@@ -170,16 +190,69 @@ while (have_posts()) : the_post();
             <div class="col">
                 <!-- Enrollment Card -->
                 <div class="enrollment-card" style="background: #fff; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); position: sticky; top: 2rem;">
-                    <div class="price" style="text-align: center; margin-bottom: 1.5rem;">
-                        <div style="font-size: 0.875rem; color: #64748b; margin-bottom: 0.5rem;">سعر الكورس</div>
-                        <div style="font-size: 2.5rem; font-weight: 700; color: #2563eb;">
-                            <?php echo $price ? esc_html($price) . (is_numeric($price) ? ' ريال' : '') : 'مجاني'; ?>
+                    <?php if ($has_access) : ?>
+                        <!-- User has access - Show progress and start button -->
+                        <div style="text-align: center; margin-bottom: 1.5rem; padding: 1.5rem; background: #e7f5ff; border-radius: 1rem;">
+                            <i class="fas fa-check-circle" style="font-size: 3rem; color: #10b981; margin-bottom: 0.5rem;"></i>
+                            <div style="font-weight: 700; font-size: 1.125rem; color: #1e293b; margin-bottom: 0.5rem;">أنت مسجل في هذا الكورس</div>
+                            <div style="color: #64748b; font-size: 0.875rem;">التقدم: <?php echo $progress; ?>%</div>
                         </div>
-                    </div>
 
-                    <button class="btn btn-primary" style="width: 100%; margin-bottom: 1rem; padding: 1rem; font-size: 1.125rem;">
-                        <i class="fas fa-shopping-cart"></i> سجل الآن
-                    </button>
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="height: 10px; background: #e2e8f0; border-radius: 999px; overflow: hidden; margin-bottom: 0.5rem;">
+                                <div style="height: 100%; background: linear-gradient(90deg, #2563eb, #3b82f6); width: <?php echo $progress; ?>%; transition: width 0.5s;"></div>
+                            </div>
+                        </div>
+
+                        <a href="<?php echo add_query_arg('learn', '1', get_permalink($course_id)); ?>" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem; padding: 1rem; font-size: 1.125rem; display: block; text-align: center;">
+                            <i class="fas fa-play-circle"></i> <?php echo $progress > 0 ? 'متابعة التعلم' : 'ابدأ الآن'; ?>
+                        </a>
+
+                    <?php else : ?>
+                        <!-- User does not have access - Show price and purchase button -->
+                        <div class="price" style="text-align: center; margin-bottom: 1.5rem;">
+                            <div style="font-size: 0.875rem; color: #64748b; margin-bottom: 0.5rem;">سعر الكورس</div>
+                            <div style="font-size: 2.5rem; font-weight: 700; color: #2563eb;">
+                                <?php
+                                // If WooCommerce is active and product is linked, use product price
+                                if (edupress_is_woocommerce_active() && $product_id) {
+                                    $product = wc_get_product($product_id);
+                                    if ($product) {
+                                        echo $product->get_price_html();
+                                    } else {
+                                        echo $price ? esc_html($price) . (is_numeric($price) ? ' ريال' : '') : 'مجاني';
+                                    }
+                                } else {
+                                    echo $price ? esc_html($price) . (is_numeric($price) ? ' ريال' : '') : 'مجاني';
+                                }
+                                ?>
+                            </div>
+                        </div>
+
+                        <?php if ($user_id) : ?>
+                            <!-- Logged in user - show purchase button -->
+                            <?php if (edupress_is_woocommerce_active() && $product_id) : ?>
+                                <!-- WooCommerce Add to Cart -->
+                                <form action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post" style="margin-bottom: 1rem;">
+                                    <?php wp_nonce_field('add-to-cart-' . $product_id); ?>
+                                    <input type="hidden" name="add-to-cart" value="<?php echo esc_attr($product_id); ?>">
+                                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.125rem;">
+                                        <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+                                    </button>
+                                </form>
+                            <?php else : ?>
+                                <!-- No WooCommerce or no product linked -->
+                                <a href="<?php echo edupress_is_woocommerce_active() ? wc_get_page_permalink('shop') : get_post_type_archive_link('course'); ?>" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem; padding: 1rem; font-size: 1.125rem; display: block; text-align: center;">
+                                    <i class="fas fa-shopping-cart"></i> سجل الآن
+                                </a>
+                            <?php endif; ?>
+                        <?php else : ?>
+                            <!-- Not logged in - show login button -->
+                            <a href="<?php echo wp_login_url(get_permalink($course_id)); ?>" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem; padding: 1rem; font-size: 1.125rem; display: block; text-align: center;">
+                                <i class="fas fa-sign-in-alt"></i> سجل دخول للتسجيل
+                            </a>
+                        <?php endif; ?>
+                    <?php endif; ?>
 
                     <div class="course-features" style="border-top: 1px solid #e2e8f0; padding-top: 1.5rem;">
                         <h3 style="font-size: 1.125rem; margin-bottom: 1rem;">يتضمن الكورس:</h3>
